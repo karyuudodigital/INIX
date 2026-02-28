@@ -1,8 +1,11 @@
 # Hashes of file build rules.
+b641400709ae6cafc2c07446f74613e1 CMakeFiles/INIX_lrelease
+5065b640acffb6fa9fa5e768a2997028 CMakeFiles/INIX_lupdate
 7bf52882ffa7a1acf6e721be451c3c29 src/CMakeFiles/INIX_autogen
 bb5d4bbae0361959dc2a15f99be1cdfc src/INIX_autogen/GBFAFXFCVO/qrc_resources.cpp
 6332b95f0cf879b25ea57a1a20c7ab7a src/INIX_autogen/timestamp
 3893461d8353f0fec540074accc8c0fc src/ini_editor_autogen/GBFAFXFCVO/qrc_resources.cpp
 151b88ad896178a5e3780bead7a38e79 src/ini_editor_autogen/timestamp
+3433adf25a1f0d546193e8be191ee450 src/inix_ja.qm
 7842e457577c241bf63922e6d977c161 tests/CMakeFiles/ini_editor_tests_autogen
 b7a2057397de9bd82273e6c4a9d08358 tests/ini_editor_tests_autogen/timestamp

@@ -12,21 +12,22 @@
 
 #include <QBrush>
 #include <QColor>
+#include <QCoreApplication>
 
 namespace {
 // Convert enum status to user-facing table text.
 QString statusToString(SemanticDiffStatus status) {
     switch (status) {
     case SemanticDiffStatus::Added:
-        return "Added";
+        return QCoreApplication::translate("DiffTableModel", "Added");
     case SemanticDiffStatus::Removed:
-        return "Removed";
+        return QCoreApplication::translate("DiffTableModel", "Removed");
     case SemanticDiffStatus::Changed:
-        return "Changed";
+        return QCoreApplication::translate("DiffTableModel", "Changed");
     case SemanticDiffStatus::Unchanged:
-        return "Unchanged";
+        return QCoreApplication::translate("DiffTableModel", "Unchanged");
     }
-    return "Unknown";
+    return QCoreApplication::translate("DiffTableModel", "Unknown");
 }
 } // namespace
 
@@ -99,15 +100,15 @@ QVariant DiffTableModel::headerData(int section, Qt::Orientation orientation, in
     }
     switch (section) {
     case 0:
-        return "Status";
+        return tr("Status");
     case 1:
-        return "Section";
+        return tr("Section");
     case 2:
-        return "Key";
+        return tr("Key");
     case 3:
-        return "Base Value";
+        return tr("Base Value");
     case 4:
-        return "Compare Value";
+        return tr("Compare Value");
     default:
         return {};
     }

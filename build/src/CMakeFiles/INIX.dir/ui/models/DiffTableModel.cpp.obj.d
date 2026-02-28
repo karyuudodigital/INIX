@@ -416,4 +416,14 @@ src/CMakeFiles/INIX.dir/ui/models/DiffTableModel.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qline.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QColor \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QCoreApplication \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qnativeinterface.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h

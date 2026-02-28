@@ -74,13 +74,13 @@ QVariant IniSettingsTableModel::headerData(int section, Qt::Orientation orientat
     }
     switch (section) {
     case Section:
-        return "Section";
+        return tr("Section");
     case Key:
-        return "Key";
+        return tr("Key");
     case Value:
-        return "Value";
+        return tr("Value");
     case SourceLine:
-        return "Source line";
+        return tr("Source line");
     default:
         return {};
     }

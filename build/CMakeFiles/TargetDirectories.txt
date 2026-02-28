@@ -1,3 +1,8 @@
+C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/INIX_lupdate.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/update_translations.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/INIX_lrelease.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/release_translations.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/INIX_other_files.dir
 C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/test.dir
 C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/edit_cache.dir
 C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/rebuild_cache.dir

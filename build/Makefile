@@ -126,6 +126,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named INIX_lupdate
+
+# Build rule for target.
+INIX_lupdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 INIX_lupdate
+.PHONY : INIX_lupdate
+
+# fast build rule for target.
+INIX_lupdate/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\INIX_lupdate.dir\build.make CMakeFiles/INIX_lupdate.dir/build
+.PHONY : INIX_lupdate/fast
+
+#=============================================================================
+# Target rules for targets named update_translations
+
+# Build rule for target.
+update_translations: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 update_translations
+.PHONY : update_translations
+
+# fast build rule for target.
+update_translations/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\update_translations.dir\build.make CMakeFiles/update_translations.dir/build
+.PHONY : update_translations/fast
+
+#=============================================================================
+# Target rules for targets named INIX_lrelease
+
+# Build rule for target.
+INIX_lrelease: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 INIX_lrelease
+.PHONY : INIX_lrelease
+
+# fast build rule for target.
+INIX_lrelease/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\INIX_lrelease.dir\build.make CMakeFiles/INIX_lrelease.dir/build
+.PHONY : INIX_lrelease/fast
+
+#=============================================================================
+# Target rules for targets named release_translations
+
+# Build rule for target.
+release_translations: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 release_translations
+.PHONY : release_translations
+
+# fast build rule for target.
+release_translations/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\release_translations.dir\build.make CMakeFiles/release_translations.dir/build
+.PHONY : release_translations/fast
+
+#=============================================================================
+# Target rules for targets named INIX_other_files
+
+# Build rule for target.
+INIX_other_files: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 INIX_other_files
+.PHONY : INIX_other_files
+
+# fast build rule for target.
+INIX_other_files/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\INIX_other_files.dir\build.make CMakeFiles/INIX_other_files.dir/build
+.PHONY : INIX_other_files/fast
+
+#=============================================================================
 # Target rules for targets named INIX
 
 # Build rule for target.
@@ -214,8 +279,13 @@ help:
 	@echo ... test
 	@echo ... INIX_autogen
 	@echo ... INIX_autogen_timestamp_deps
+	@echo ... INIX_lrelease
+	@echo ... INIX_lupdate
+	@echo ... INIX_other_files
 	@echo ... ini_editor_tests_autogen
 	@echo ... ini_editor_tests_autogen_timestamp_deps
+	@echo ... release_translations
+	@echo ... update_translations
 	@echo ... INIX
 	@echo ... ini_editor_tests
 .PHONY : help

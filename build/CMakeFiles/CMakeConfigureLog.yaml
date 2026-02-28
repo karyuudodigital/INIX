@@ -6583,3 +6583,131 @@ events:
         - "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
         - "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake:241 (find_package)"
+      - "src/CMakeLists.txt:5 (find_package)"
+    name: "Qt6LinguistTools"
+    configs:
+      -
+        filename: "Qt6LinguistTools.cps"
+        kind: "cps"
+      -
+        filename: "qt6linguisttools.cps"
+        kind: "cps"
+      -
+        filename: "Qt6LinguistToolsConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6linguisttools-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6LinguistTools"
+      search_paths:
+        - "C:/Qt/6.10.2/mingw_64/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/pkgRedirects/Qt6LinguistToolsConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/pkgRedirects/qt6linguisttools-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/pkgRedirects/lib/cps/Qt6LinguistTools.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/pkgRedirects/lib/cps/qt6linguisttools.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/pkgRedirects/share/cps/Qt6LinguistTools.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/pkgRedirects/share/cps/qt6linguisttools.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistToolsConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Qt/6.10.2/mingw_64/lib/cmake/qt6linguisttools-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfig.cmake"
+      mode: "config"
+      version: "6.10.2"
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "C:/Qt/6.10.2/mingw_64"
+      ENV{PATH}:
+        - "C:\\Qt\\Tools\\mingw1310_64\\bin"
+        - "C:\\Qt\\6.10.2\\mingw_64\\bin"
+        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\Hunter\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files\\Microsoft SQL Server\\170\\Tools\\Binn\\"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "C:\\Program Files\\Docker\\Docker\\resources\\bin"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\Hunter\\.cargo\\bin"
+        - "C:\\Users\\Hunter\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\Hunter\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\Hunter\\AppData\\Local\\nvm"
+        - "C:\\nvm4w\\nodejs"
+        - "C:\\Users\\Hunter\\AppData\\Roaming\\npm"
+        - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+        - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
+        - "C:\\Users\\Hunter\\.dotnet\\tools"
+        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/IniEditor"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/IniEditor"
+...

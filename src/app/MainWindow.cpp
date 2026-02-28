@@ -192,7 +192,7 @@ MainWindow::MainWindow(QWidget* parent)
     mergeTable_->setModel(&mergePreviewModel_);
 
     updateWindowTitle();
-    statusBar()->showMessage("Ready");
+    statusBar()->showMessage(tr("Ready"));
 }
 
 void MainWindow::setupUi() {
@@ -200,14 +200,14 @@ void MainWindow::setupUi() {
     resize(1280, 820);
 
     // Search toolbar drives proxy filtering.
-    auto* searchToolbar = addToolBar("Search");
+    auto* searchToolbar = addToolBar(tr("Search"));
     searchEdit_ = new QLineEdit(this);
-    searchEdit_->setPlaceholderText("Search section/key/value...");
-    caseSensitiveCheck_ = new QCheckBox("Case", this);
-    regexCheck_ = new QCheckBox("Regex", this);
-    searchCountLabel_ = new QLabel("Matches: 0", this);
+    searchEdit_->setPlaceholderText(tr("Search section/key/value..."));
+    caseSensitiveCheck_ = new QCheckBox(tr("Case"), this);
+    regexCheck_ = new QCheckBox(tr("Regex"), this);
+    searchCountLabel_ = new QLabel(tr("Matches: 0"), this);
 
-    searchToolbar->addWidget(new QLabel("Search:", this));
+    searchToolbar->addWidget(new QLabel(tr("Search:"), this));
     searchToolbar->addWidget(searchEdit_);
     searchToolbar->addWidget(caseSensitiveCheck_);
     searchToolbar->addWidget(regexCheck_);
@@ -223,7 +223,7 @@ void MainWindow::setupUi() {
     setCentralWidget(settingsTable_);
 
     // Left dock: opened file list/history.
-    filesDock_ = new QDockWidget("Files", this);
+    filesDock_ = new QDockWidget(tr("Files"), this);
     filesDock_->setObjectName("filesDock");
     filesDock_->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable |
                             QDockWidget::DockWidgetFloatable);
@@ -232,7 +232,7 @@ void MainWindow::setupUi() {
     addDockWidget(Qt::LeftDockWidgetArea, filesDock_);
 
     // Right dock: diff and merge workflows in a tab widget.
-    diffMergeDock_ = new QDockWidget("Diff / Merge", this);
+    diffMergeDock_ = new QDockWidget(tr("Diff / Merge"), this);
     diffMergeDock_->setObjectName("diffMergeDock");
     diffMergeDock_->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable |
                                 QDockWidget::DockWidgetFloatable);
@@ -240,9 +240,9 @@ void MainWindow::setupUi() {
 
     auto* diffTab = new QWidget(tabs);
     auto* diffLayout = new QVBoxLayout(diffTab);
-    auto* loadCompareButton = new QPushButton("Load Compare INI", diffTab);
-    auto* recomputeDiffButton = new QPushButton("Build Diff", diffTab);
-    diffSummaryLabel_ = new QLabel("Diff: not computed", diffTab);
+    auto* loadCompareButton = new QPushButton(tr("Load Compare INI"), diffTab);
+    auto* recomputeDiffButton = new QPushButton(tr("Build Diff"), diffTab);
+    diffSummaryLabel_ = new QLabel(tr("Diff: not computed"), diffTab);
     diffTable_ = new QTableView(diffTab);
     diffTable_->horizontalHeader()->setStretchLastSection(true);
     diffTable_->horizontalHeader()->setFixedHeight(kMainHeaderHeight);
@@ -250,18 +250,19 @@ void MainWindow::setupUi() {
     diffLayout->addWidget(recomputeDiffButton);
     diffLayout->addWidget(diffSummaryLabel_);
     diffLayout->addWidget(diffTable_);
-    tabs->addTab(diffTab, "Diff");
+    tabs->addTab(diffTab, tr("Diff"));
 
     auto* mergeTab = new QWidget(tabs);
     auto* mergeLayout = new QVBoxLayout(mergeTab);
-    auto* previewButton = new QPushButton("Prepare Merge Preview", mergeTab);
-    auto* selectAllButton = new QPushButton("Select All", mergeTab);
-    auto* selectChangedButton = new QPushButton("Select Changed", mergeTab);
-    auto* selectAddedButton = new QPushButton("Select Added", mergeTab);
-    auto* clearSelectionButton = new QPushButton("Clear Selection", mergeTab);
+    auto* previewButton = new QPushButton(tr("Prepare Merge Preview"), mergeTab);
+    auto* selectAllButton = new QPushButton(tr("Select All"), mergeTab);
+    auto* selectChangedButton = new QPushButton(tr("Select Changed"), mergeTab);
+    auto* selectAddedButton = new QPushButton(tr("Select Added"), mergeTab);
+    auto* clearSelectionButton = new QPushButton(tr("Clear Selection"), mergeTab);
     conflictPolicyCombo_ = new QComboBox(mergeTab);
-    conflictPolicyCombo_->addItems({"Replace target", "Keep target", "Prompt each conflict"});
-    auto* applyMergeButton = new QPushButton("Apply Merge", mergeTab);
+    conflictPolicyCombo_->addItems(
+        {tr("Replace target"), tr("Keep target"), tr("Prompt each conflict")});
+    auto* applyMergeButton = new QPushButton(tr("Apply Merge"), mergeTab);
     mergeTable_ = new QTableView(mergeTab);
     mergeTable_->horizontalHeader()->setStretchLastSection(true);
     mergeTable_->horizontalHeader()->setFixedHeight(kMainHeaderHeight);
@@ -271,17 +272,17 @@ void MainWindow::setupUi() {
     mergeLayout->addWidget(selectChangedButton);
     mergeLayout->addWidget(selectAddedButton);
     mergeLayout->addWidget(clearSelectionButton);
-    mergeLayout->addWidget(new QLabel("Conflict policy:", mergeTab));
+    mergeLayout->addWidget(new QLabel(tr("Conflict policy:"), mergeTab));
     mergeLayout->addWidget(conflictPolicyCombo_);
     mergeLayout->addWidget(applyMergeButton);
     mergeLayout->addWidget(mergeTable_);
-    tabs->addTab(mergeTab, "Merge");
+    tabs->addTab(mergeTab, tr("Merge"));
 
     diffMergeDock_->setWidget(tabs);
     addDockWidget(Qt::RightDockWidgetArea, diffMergeDock_);
 
     // Bottom dock: append-only status log.
-    statusDock_ = new QDockWidget("Status / Log", this);
+    statusDock_ = new QDockWidget(tr("Status / Log"), this);
     statusDock_->setObjectName("statusDock");
     statusDock_->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable |
                              QDockWidget::DockWidgetFloatable);
@@ -303,14 +304,14 @@ void MainWindow::setupUi() {
 
 void MainWindow::setupMenus() {
     // File menu contains open/save lifecycle actions.
-    auto* fileMenu = menuBar()->addMenu("&File");
-    auto* openAction = fileMenu->addAction("Open...");
-    auto* saveAction = fileMenu->addAction("Save");
-    auto* saveAsAction = fileMenu->addAction("Save As...");
+    auto* fileMenu = menuBar()->addMenu(tr("&File"));
+    auto* openAction = fileMenu->addAction(tr("Open..."));
+    auto* saveAction = fileMenu->addAction(tr("Save"));
+    auto* saveAsAction = fileMenu->addAction(tr("Save As..."));
     fileMenu->addSeparator();
-    auto* openCompareAction = fileMenu->addAction("Open Compare INI...");
+    auto* openCompareAction = fileMenu->addAction(tr("Open Compare INI..."));
     fileMenu->addSeparator();
-    auto* quitAction = fileMenu->addAction("Quit");
+    auto* quitAction = fileMenu->addAction(tr("Quit"));
 
     openAction->setShortcut(QKeySequence("Ctrl+O"));
     saveAction->setShortcut(QKeySequence("Ctrl+S"));
@@ -318,19 +319,19 @@ void MainWindow::setupMenus() {
     quitAction->setShortcut(QKeySequence("Ctrl+Q"));
 
     // Edit menu includes undo stack actions and document mutation commands.
-    auto* editMenu = menuBar()->addMenu("&Edit");
-    auto* undoAction = undoStack_.createUndoAction(this, "Undo");
-    auto* redoAction = undoStack_.createRedoAction(this, "Redo");
+    auto* editMenu = menuBar()->addMenu(tr("&Edit"));
+    auto* undoAction = undoStack_.createUndoAction(this, tr("Undo"));
+    auto* redoAction = undoStack_.createRedoAction(this, tr("Redo"));
     undoAction->setShortcut(QKeySequence::Undo);
     redoAction->setShortcut(QKeySequence::Redo);
     editMenu->addAction(undoAction);
     editMenu->addAction(redoAction);
     editMenu->addSeparator();
-    auto* addSettingAction = editMenu->addAction("Add Setting...");
-    auto* deleteSettingAction = editMenu->addAction("Delete Selected Setting");
-    auto* addSectionAction = editMenu->addAction("Add Section...");
-    auto* deleteSectionAction = editMenu->addAction("Delete Section...");
-    auto* focusSearchAction = editMenu->addAction("Focus Search");
+    auto* addSettingAction = editMenu->addAction(tr("Add Setting..."));
+    auto* deleteSettingAction = editMenu->addAction(tr("Delete Selected Setting"));
+    auto* addSectionAction = editMenu->addAction(tr("Add Section..."));
+    auto* deleteSectionAction = editMenu->addAction(tr("Delete Section..."));
+    auto* focusSearchAction = editMenu->addAction(tr("Focus Search"));
     focusSearchAction->setShortcut(QKeySequence("Ctrl+F"));
 
     // Signals/slots wiring:
@@ -348,30 +349,31 @@ void MainWindow::setupMenus() {
     connect(focusSearchAction, &QAction::triggered, searchEdit_, [this] { searchEdit_->setFocus(); });
 
     // View menu exposes dock visibility and layout recovery actions.
-    auto* viewMenu = menuBar()->addMenu("&View");
+    auto* viewMenu = menuBar()->addMenu(tr("&View"));
     viewMenu->addAction(filesDock_->toggleViewAction());
     viewMenu->addAction(diffMergeDock_->toggleViewAction());
     viewMenu->addAction(statusDock_->toggleViewAction());
     viewMenu->addSeparator();
-    auto* showAllPanelsAction = viewMenu->addAction("Show All Panels");
-    auto* redockPanelsAction = viewMenu->addAction("Redock All Panels");
+    auto* showAllPanelsAction = viewMenu->addAction(tr("Show All Panels"));
+    auto* redockPanelsAction = viewMenu->addAction(tr("Redock All Panels"));
     redockPanelsAction->setShortcut(QKeySequence("Ctrl+Shift+R"));
 
     connect(showAllPanelsAction, &QAction::triggered, this, &MainWindow::showAllPanels);
     connect(redockPanelsAction, &QAction::triggered, this, &MainWindow::redockAllPanels);
 
-    auto* presetsMenu = menuBar()->addMenu("&Presets");
+    auto* presetsMenu = menuBar()->addMenu(tr("&Presets"));
     // Preset actions are grouped by lifecycle:
     // create/update -> maintenance -> apply.
-    auto* saveSectionPresetAction = presetsMenu->addAction("Save Section Preset...");
-    auto* saveFilteredPresetAction = presetsMenu->addAction("Save Filtered Set Preset...");
-    auto* addSelectedRowToPresetAction = presetsMenu->addAction("Add Selected Row To Preset...");
-    auto* addSectionToPresetNoOverrideAction = presetsMenu->addAction("Add Section To Preset (No Override)...");
+    auto* saveSectionPresetAction = presetsMenu->addAction(tr("Save Section Preset..."));
+    auto* saveFilteredPresetAction = presetsMenu->addAction(tr("Save Filtered Set Preset..."));
+    auto* addSelectedRowToPresetAction = presetsMenu->addAction(tr("Add Selected Row To Preset..."));
+    auto* addSectionToPresetNoOverrideAction =
+        presetsMenu->addAction(tr("Add Section To Preset (No Override)..."));
     presetsMenu->addSeparator();
-    auto* renameSavedPresetAction = presetsMenu->addAction("Rename Saved Preset...");
-    auto* deleteSavedPresetAction = presetsMenu->addAction("Delete Saved Preset...");
+    auto* renameSavedPresetAction = presetsMenu->addAction(tr("Rename Saved Preset..."));
+    auto* deleteSavedPresetAction = presetsMenu->addAction(tr("Delete Saved Preset..."));
     presetsMenu->addSeparator();
-    auto* applySavedPresetAction = presetsMenu->addAction("Apply Saved Preset...");
+    auto* applySavedPresetAction = presetsMenu->addAction(tr("Apply Saved Preset..."));
 
     connect(saveSectionPresetAction, &QAction::triggered, this, &MainWindow::onSaveSectionPreset);
     connect(saveFilteredPresetAction, &QAction::triggered, this, &MainWindow::onSaveFilteredPreset);
@@ -404,22 +406,22 @@ void MainWindow::setupConnections() {
     connect(&openWatcher_, &QFutureWatcher<IniParseResult>::finished, this, [this] {
         const auto result = openWatcher_.result();
         if (!result.ok) {
-            QMessageBox::critical(this, "Open failed", result.error);
-            statusBar()->showMessage("Open failed", 3000);
+            QMessageBox::critical(this, tr("Open failed"), result.error);
+            statusBar()->showMessage(tr("Open failed"), 3000);
             return;
         }
         document_.restore(result.snapshot);
         document_.setDirty(false);
         fileList_->addItem(result.snapshot.path);
         logMessage(QStringLiteral("Opened %1").arg(result.snapshot.path));
-        statusBar()->showMessage("File opened", 2000);
+        statusBar()->showMessage(tr("File opened"), 2000);
     });
 
     // Async compare-open result handler.
     connect(&compareOpenWatcher_, &QFutureWatcher<IniParseResult>::finished, this, [this] {
         const auto result = compareOpenWatcher_.result();
         if (!result.ok) {
-            QMessageBox::critical(this, "Compare open failed", result.error);
+            QMessageBox::critical(this, tr("Compare open failed"), result.error);
             return;
         }
         compareDocument_.restore(result.snapshot);
@@ -436,7 +438,7 @@ void MainWindow::setupConnections() {
                                        .arg(result.summary.addedLines)
                                        .arg(result.summary.removedLines)
                                        .arg(result.summary.changedLines));
-        statusBar()->showMessage("Diff complete", 2500);
+        statusBar()->showMessage(tr("Diff complete"), 2500);
     });
 
     // Button lookups are done by objectName so setupUi and setupConnections remain decoupled.
@@ -552,7 +554,7 @@ void MainWindow::redockAllPanels() {
 
 void MainWindow::updateWindowTitle() {
     // Title reflects current file path and dirty marker.
-    const QString fileName = document_.path().isEmpty() ? QStringLiteral("Untitled") : document_.path();
+    const QString fileName = document_.path().isEmpty() ? tr("Untitled") : document_.path();
     const QString dirtyMarker = document_.isDirty() ? QStringLiteral("*") : QString();
     setWindowTitle(QStringLiteral("INIX - %1%2").arg(fileName, dirtyMarker));
 }
@@ -571,21 +573,21 @@ SearchOptions MainWindow::currentSearchOptions() const {
 
 void MainWindow::runOpenAsync(const QString& path) {
     // QtConcurrent::run executes parser on worker thread and returns QFuture.
-    statusBar()->showMessage("Opening file...");
+    statusBar()->showMessage(tr("Opening file..."));
     openWatcher_.setFuture(QtConcurrent::run([this, path] { return parser_.parseFile(path); }));
 }
 
 void MainWindow::runCompareOpenAsync(const QString& path) {
-    statusBar()->showMessage("Opening compare file...");
+    statusBar()->showMessage(tr("Opening compare file..."));
     compareOpenWatcher_.setFuture(QtConcurrent::run([this, path] { return parser_.parseFile(path); }));
 }
 
 void MainWindow::runDiffAsync() {
     if (document_.isEmpty() || compareDocument_.isEmpty()) {
-        statusBar()->showMessage("Load both target and compare files first", 2500);
+        statusBar()->showMessage(tr("Load both target and compare files first"), 2500);
         return;
     }
-    statusBar()->showMessage("Computing diff...");
+    statusBar()->showMessage(tr("Computing diff..."));
     // Compute both text summary and semantic diff off the UI thread.
     diffWatcher_.setFuture(QtConcurrent::run([this] {
         DiffComputationResult output;
@@ -616,7 +618,7 @@ bool MainWindow::loadSavedSnippets(QJsonObject& snippets, QString* error) const 
     }
     if (!file.open(QIODevice::ReadOnly)) {
         if (error) {
-            *error = QStringLiteral("Unable to open preset file: %1").arg(file.fileName());
+            *error = tr("Unable to open preset file: %1").arg(file.fileName());
         }
         return false;
     }
@@ -625,13 +627,13 @@ bool MainWindow::loadSavedSnippets(QJsonObject& snippets, QString* error) const 
     const QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &parseError);
     if (parseError.error != QJsonParseError::NoError) {
         if (error) {
-            *error = QStringLiteral("Preset file is not valid JSON: %1").arg(parseError.errorString());
+            *error = tr("Preset file is not valid JSON: %1").arg(parseError.errorString());
         }
         return false;
     }
     if (!doc.isObject()) {
         if (error) {
-            *error = QStringLiteral("Preset file must contain a JSON object.");
+            *error = tr("Preset file must contain a JSON object.");
         }
         return false;
     }
@@ -646,7 +648,7 @@ bool MainWindow::writeSavedSnippets(const QJsonObject& snippets, QString* error)
     QDir dir = fileInfo.dir();
     if (!dir.exists() && !dir.mkpath(QStringLiteral("."))) {
         if (error) {
-            *error = QStringLiteral("Unable to create preset directory: %1").arg(dir.path());
+            *error = tr("Unable to create preset directory: %1").arg(dir.path());
         }
         return false;
     }
@@ -654,7 +656,7 @@ bool MainWindow::writeSavedSnippets(const QJsonObject& snippets, QString* error)
     QFile file(filePath);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
         if (error) {
-            *error = QStringLiteral("Unable to write preset file: %1").arg(filePath);
+            *error = tr("Unable to write preset file: %1").arg(filePath);
         }
         return false;
     }
@@ -663,7 +665,7 @@ bool MainWindow::writeSavedSnippets(const QJsonObject& snippets, QString* error)
     const QJsonDocument doc(snippets);
     if (file.write(doc.toJson(QJsonDocument::Indented)) < 0) {
         if (error) {
-            *error = QStringLiteral("Failed to write preset file: %1").arg(filePath);
+            *error = tr("Failed to write preset file: %1").arg(filePath);
         }
         return false;
     }
@@ -768,11 +770,11 @@ QString MainWindow::buildSelectedRowSnippet() const {
 bool MainWindow::saveSnippetByName(const QString& name, const QString& snippet, QString& error) {
     const QString trimmedName = name.trimmed();
     if (trimmedName.isEmpty()) {
-        error = QStringLiteral("Preset name cannot be empty.");
+        error = tr("Preset name cannot be empty.");
         return false;
     }
     if (snippet.trimmed().isEmpty()) {
-        error = QStringLiteral("Preset content is empty.");
+        error = tr("Preset content is empty.");
         return false;
     }
 
@@ -784,10 +786,10 @@ bool MainWindow::saveSnippetByName(const QString& name, const QString& snippet, 
     // Explicit overwrite confirmation protects against accidental replacement.
     if (snippets.contains(trimmedName)) {
         const auto overwrite = QMessageBox::question(this,
-                                                     "Overwrite preset",
-                                                     QStringLiteral("Preset \"%1\" already exists. Overwrite it?").arg(trimmedName));
+                                                     tr("Overwrite preset"),
+                                                     tr("Preset \"%1\" already exists. Overwrite it?").arg(trimmedName));
         if (overwrite != QMessageBox::Yes) {
-            error = QStringLiteral("Preset save cancelled.");
+            error = tr("Preset save cancelled.");
             return false;
         }
     }
@@ -804,7 +806,7 @@ bool MainWindow::selectSavedPresetName(QString& presetName, QString& error) cons
         return false;
     }
     if (snippets.isEmpty()) {
-        error = QStringLiteral("No saved presets were found.");
+        error = tr("No saved presets were found.");
         return false;
     }
 
@@ -817,9 +819,9 @@ bool MainWindow::selectSavedPresetName(QString& presetName, QString& error) cons
     // QInputDialog static API expects QWidget* parent. This helper is const
     // because it does not mutate logical MainWindow state.
     const QString selected =
-        QInputDialog::getItem(const_cast<MainWindow*>(this), "Choose Preset", "Preset:", names, 0, false, &accepted);
+        QInputDialog::getItem(const_cast<MainWindow*>(this), tr("Choose Preset"), tr("Preset:"), names, 0, false, &accepted);
     if (!accepted || selected.isEmpty()) {
-        error = QStringLiteral("Cancelled.");
+        error = tr("Cancelled.");
         return false;
     }
 
@@ -839,7 +841,7 @@ bool MainWindow::mergeSnippetIntoPreset(const QString& presetName,
     // - Update existing values only when overwriteExistingKeys == true.
     const QString normalizedName = presetName.trimmed();
     if (normalizedName.isEmpty()) {
-        error = QStringLiteral("Preset name cannot be empty.");
+        error = tr("Preset name cannot be empty.");
         return false;
     }
 
@@ -848,14 +850,14 @@ bool MainWindow::mergeSnippetIntoPreset(const QString& presetName,
         return false;
     }
     if (!snippets.contains(normalizedName)) {
-        error = QStringLiteral("Preset \"%1\" does not exist.").arg(normalizedName);
+        error = tr("Preset \"%1\" does not exist.").arg(normalizedName);
         return false;
     }
 
     const QVector<SnippetEntry> existingEntries = parseSnippetEntries(snippets.value(normalizedName).toString());
     const QVector<SnippetEntry> incomingEntries = parseSnippetEntries(snippet);
     if (incomingEntries.isEmpty()) {
-        error = QStringLiteral("No valid key/value rows were found to add.");
+        error = tr("No valid key/value rows were found to add.");
         return false;
     }
 
@@ -922,7 +924,7 @@ int MainWindow::applySnippet(const QString& snippet, QString& error) {
     }
 
     if (applied == 0) {
-        error = QStringLiteral("Preset contains no applicable key/value entries.");
+        error = tr("Preset contains no applicable key/value entries.");
     }
     return applied;
 }
@@ -930,7 +932,7 @@ int MainWindow::applySnippet(const QString& snippet, QString& error) {
 // ----- Slots: file/document actions -----
 
 void MainWindow::onOpenFile() {
-    const QString path = QFileDialog::getOpenFileName(this, "Open INI", QString(), "INI Files (*.ini);;All Files (*.*)");
+    const QString path = QFileDialog::getOpenFileName(this, tr("Open INI"), QString(), tr("INI Files (*.ini);;All Files (*.*)"));
     if (path.isEmpty()) {
         return;
     }
@@ -945,38 +947,38 @@ void MainWindow::onSaveFile() {
     }
     QString error;
     if (!serializer_.writeToFile(document_, document_.path(), error)) {
-        QMessageBox::critical(this, "Save failed", error);
+        QMessageBox::critical(this, tr("Save failed"), error);
         return;
     }
     document_.setDirty(false);
-    statusBar()->showMessage("Saved", 1500);
+    statusBar()->showMessage(tr("Saved"), 1500);
 }
 
 void MainWindow::onSaveAsFile() {
-    const QString path = QFileDialog::getSaveFileName(this, "Save INI As", document_.path(), "INI Files (*.ini)");
+    const QString path = QFileDialog::getSaveFileName(this, tr("Save INI As"), document_.path(), tr("INI Files (*.ini)"));
     if (path.isEmpty()) {
         return;
     }
     QString error;
     if (!serializer_.writeToFile(document_, path, error)) {
-        QMessageBox::critical(this, "Save As failed", error);
+        QMessageBox::critical(this, tr("Save As failed"), error);
         return;
     }
     document_.setPath(path);
     document_.setDirty(false);
-    statusBar()->showMessage("Saved", 1500);
+    statusBar()->showMessage(tr("Saved"), 1500);
 }
 
 void MainWindow::onAddSetting() {
-    const QString section = QInputDialog::getText(this, "Section", "Section:");
+    const QString section = QInputDialog::getText(this, tr("Section"), tr("Section:"));
     if (section.isEmpty()) {
         return;
     }
-    const QString key = QInputDialog::getText(this, "Key", "Key:");
+    const QString key = QInputDialog::getText(this, tr("Key"), tr("Key:"));
     if (key.isEmpty()) {
         return;
     }
-    const QString value = QInputDialog::getText(this, "Value", "Value:");
+    const QString value = QInputDialog::getText(this, tr("Value"), tr("Value:"));
     settingsModel_.addSetting(section, key, value);
 }
 
@@ -991,7 +993,7 @@ void MainWindow::onDeleteSelectedSetting() {
 }
 
 void MainWindow::onAddSection() {
-    const QString section = QInputDialog::getText(this, "Add Section", "Section name:");
+    const QString section = QInputDialog::getText(this, tr("Add Section"), tr("Section name:"));
     if (section.isEmpty()) {
         return;
     }
@@ -999,7 +1001,7 @@ void MainWindow::onAddSection() {
 }
 
 void MainWindow::onDeleteSection() {
-    const QString section = QInputDialog::getText(this, "Delete Section", "Section name:");
+    const QString section = QInputDialog::getText(this, tr("Delete Section"), tr("Section name:"));
     if (section.isEmpty()) {
         return;
     }
@@ -1007,7 +1009,7 @@ void MainWindow::onDeleteSection() {
 }
 
 void MainWindow::onOpenCompareFile() {
-    const QString path = QFileDialog::getOpenFileName(this, "Open Compare INI", QString(), "INI Files (*.ini)");
+    const QString path = QFileDialog::getOpenFileName(this, tr("Open Compare INI"), QString(), tr("INI Files (*.ini)"));
     if (path.isEmpty()) {
         return;
     }
@@ -1028,7 +1030,7 @@ void MainWindow::onPrepareMergePreview() {
 void MainWindow::onApplyMerge() {
     auto previewItems = mergePreviewModel_.items();
     if (previewItems.isEmpty()) {
-        QMessageBox::information(this, "Merge", "Prepare a merge preview first.");
+        QMessageBox::information(this, tr("Merge"), tr("Prepare a merge preview first."));
         return;
     }
     // Translate combo index to explicit enum policy.
@@ -1045,8 +1047,8 @@ void MainWindow::onApplyMerge() {
         document_, previewItems, policy, [this](const MergePreviewItem& item) {
             const auto result = QMessageBox::question(
                 this,
-                "Merge conflict",
-                QStringLiteral("Replace [%1] %2?\nTarget: %3\nSource: %4")
+                tr("Merge conflict"),
+                tr("Replace [%1] %2?\nTarget: %3\nSource: %4")
                     .arg(item.section, item.key, item.targetValue, item.sourceValue));
             return result == QMessageBox::Yes;
         });
@@ -1054,8 +1056,8 @@ void MainWindow::onApplyMerge() {
     undoStack_.push(new MergeApplyCommand(&document_, before, after));
 
     QMessageBox::information(this,
-                             "Merge complete",
-                             QStringLiteral("Added: %1\nReplaced: %2\nKept: %3\nSkipped: %4")
+                             tr("Merge complete"),
+                             tr("Added: %1\nReplaced: %2\nKept: %3\nSkipped: %4")
                                  .arg(summary.added)
                                  .arg(summary.replaced)
                                  .arg(summary.kept)
@@ -1072,57 +1074,57 @@ void MainWindow::onSaveSectionPreset() {
         defaultSection = settingsTable_->model()->data(settingsTable_->model()->index(current.row(), 0), Qt::DisplayRole).toString();
     }
 
-    const QString section = QInputDialog::getText(this, "Save Section Preset", "Section name:", QLineEdit::Normal, defaultSection);
+    const QString section = QInputDialog::getText(this, tr("Save Section Preset"), tr("Section name:"), QLineEdit::Normal, defaultSection);
     if (section.trimmed().isEmpty()) {
         return;
     }
 
     const QString snippet = buildSectionSnippet(section);
     if (snippet.isEmpty()) {
-        QMessageBox::information(this, "Save Section Preset", "No key/value entries were found in that section.");
+        QMessageBox::information(this, tr("Save Section Preset"), tr("No key/value entries were found in that section."));
         return;
     }
 
-    const QString presetName = QInputDialog::getText(this, "Save Section Preset", "Preset name:");
+    const QString presetName = QInputDialog::getText(this, tr("Save Section Preset"), tr("Preset name:"));
     if (presetName.trimmed().isEmpty()) {
         return;
     }
 
     QString error;
     if (!saveSnippetByName(presetName, snippet, error)) {
-        if (error != QStringLiteral("Preset save cancelled.")) {
-            QMessageBox::critical(this, "Save Section Preset", error);
+        if (error != tr("Preset save cancelled.")) {
+            QMessageBox::critical(this, tr("Save Section Preset"), error);
         }
         return;
     }
 
     logMessage(QStringLiteral("Saved section preset \"%1\"").arg(presetName.trimmed()));
-    statusBar()->showMessage("Section preset saved", 2500);
+    statusBar()->showMessage(tr("Section preset saved"), 2500);
 }
 
 void MainWindow::onSaveFilteredPreset() {
     // Saves the exact visible subset from the filtered proxy table.
     const QString snippet = buildFilteredSetSnippet();
     if (snippet.trimmed().isEmpty()) {
-        QMessageBox::information(this, "Save Filtered Set Preset", "No visible values are available to save.");
+        QMessageBox::information(this, tr("Save Filtered Set Preset"), tr("No visible values are available to save."));
         return;
     }
 
-    const QString presetName = QInputDialog::getText(this, "Save Filtered Set Preset", "Preset name:");
+    const QString presetName = QInputDialog::getText(this, tr("Save Filtered Set Preset"), tr("Preset name:"));
     if (presetName.trimmed().isEmpty()) {
         return;
     }
 
     QString error;
     if (!saveSnippetByName(presetName, snippet, error)) {
-        if (error != QStringLiteral("Preset save cancelled.")) {
-            QMessageBox::critical(this, "Save Filtered Set Preset", error);
+        if (error != tr("Preset save cancelled.")) {
+            QMessageBox::critical(this, tr("Save Filtered Set Preset"), error);
         }
         return;
     }
 
     logMessage(QStringLiteral("Saved filtered preset \"%1\"").arg(presetName.trimmed()));
-    statusBar()->showMessage("Filtered preset saved", 2500);
+    statusBar()->showMessage(tr("Filtered preset saved"), 2500);
 }
 
 void MainWindow::onApplySavedPreset() {
@@ -1130,32 +1132,32 @@ void MainWindow::onApplySavedPreset() {
     QString error;
     QString selectedName;
     if (!selectSavedPresetName(selectedName, error)) {
-        if (error != QStringLiteral("Cancelled.")) {
-            QMessageBox::information(this, "Apply Saved Preset", error);
+        if (error != tr("Cancelled.")) {
+            QMessageBox::information(this, tr("Apply Saved Preset"), error);
         }
         return;
     }
 
     QJsonObject snippets;
     if (!loadSavedSnippets(snippets, &error)) {
-        QMessageBox::critical(this, "Apply Saved Preset", error);
+        QMessageBox::critical(this, tr("Apply Saved Preset"), error);
         return;
     }
 
     const QString snippet = snippets.value(selectedName).toString();
     const int appliedCount = applySnippet(snippet, error);
     if (appliedCount <= 0) {
-        QMessageBox::critical(this, "Apply Saved Preset", error);
+        QMessageBox::critical(this, tr("Apply Saved Preset"), error);
         return;
     }
 
     QMessageBox::information(this,
-                             "Apply Saved Preset",
-                             QStringLiteral("Applied preset \"%1\".\nUpdated entries: %2")
+                             tr("Apply Saved Preset"),
+                             tr("Applied preset \"%1\".\nUpdated entries: %2")
                                  .arg(selectedName)
                                  .arg(appliedCount));
     logMessage(QStringLiteral("Applied preset \"%1\" (%2 entries)").arg(selectedName).arg(appliedCount));
-    statusBar()->showMessage(QStringLiteral("Applied preset: %1").arg(selectedName), 2500);
+    statusBar()->showMessage(tr("Applied preset: %1").arg(selectedName), 2500);
 }
 
 void MainWindow::onRenameSavedPreset() {
@@ -1163,25 +1165,25 @@ void MainWindow::onRenameSavedPreset() {
     QString error;
     QString oldName;
     if (!selectSavedPresetName(oldName, error)) {
-        if (error != QStringLiteral("Cancelled.")) {
-            QMessageBox::information(this, "Rename Saved Preset", error);
+        if (error != tr("Cancelled.")) {
+            QMessageBox::information(this, tr("Rename Saved Preset"), error);
         }
         return;
     }
 
     const QString newName =
-        QInputDialog::getText(this, "Rename Saved Preset", "New preset name:", QLineEdit::Normal, oldName);
+        QInputDialog::getText(this, tr("Rename Saved Preset"), tr("New preset name:"), QLineEdit::Normal, oldName);
     if (newName.trimmed().isEmpty() || newName.trimmed() == oldName) {
         return;
     }
 
     QJsonObject snippets;
     if (!loadSavedSnippets(snippets, &error)) {
-        QMessageBox::critical(this, "Rename Saved Preset", error);
+        QMessageBox::critical(this, tr("Rename Saved Preset"), error);
         return;
     }
     if (snippets.contains(newName.trimmed())) {
-        QMessageBox::critical(this, "Rename Saved Preset", "A preset with that name already exists.");
+        QMessageBox::critical(this, tr("Rename Saved Preset"), tr("A preset with that name already exists."));
         return;
     }
 
@@ -1189,12 +1191,12 @@ void MainWindow::onRenameSavedPreset() {
     snippets.remove(oldName);
     snippets.insert(newName.trimmed(), content);
     if (!writeSavedSnippets(snippets, &error)) {
-        QMessageBox::critical(this, "Rename Saved Preset", error);
+        QMessageBox::critical(this, tr("Rename Saved Preset"), error);
         return;
     }
 
     logMessage(QStringLiteral("Renamed preset \"%1\" to \"%2\"").arg(oldName, newName.trimmed()));
-    statusBar()->showMessage("Preset renamed", 2500);
+    statusBar()->showMessage(tr("Preset renamed"), 2500);
 }
 
 void MainWindow::onDeleteSavedPreset() {
@@ -1202,31 +1204,31 @@ void MainWindow::onDeleteSavedPreset() {
     QString error;
     QString presetName;
     if (!selectSavedPresetName(presetName, error)) {
-        if (error != QStringLiteral("Cancelled.")) {
-            QMessageBox::information(this, "Delete Saved Preset", error);
+        if (error != tr("Cancelled.")) {
+            QMessageBox::information(this, tr("Delete Saved Preset"), error);
         }
         return;
     }
 
     const auto confirm =
-        QMessageBox::question(this, "Delete Saved Preset", QStringLiteral("Delete preset \"%1\"?").arg(presetName));
+        QMessageBox::question(this, tr("Delete Saved Preset"), tr("Delete preset \"%1\"?").arg(presetName));
     if (confirm != QMessageBox::Yes) {
         return;
     }
 
     QJsonObject snippets;
     if (!loadSavedSnippets(snippets, &error)) {
-        QMessageBox::critical(this, "Delete Saved Preset", error);
+        QMessageBox::critical(this, tr("Delete Saved Preset"), error);
         return;
     }
     snippets.remove(presetName);
     if (!writeSavedSnippets(snippets, &error)) {
-        QMessageBox::critical(this, "Delete Saved Preset", error);
+        QMessageBox::critical(this, tr("Delete Saved Preset"), error);
         return;
     }
 
     logMessage(QStringLiteral("Deleted preset \"%1\"").arg(presetName));
-    statusBar()->showMessage("Preset deleted", 2500);
+    statusBar()->showMessage(tr("Preset deleted"), 2500);
 }
 
 void MainWindow::onAddSelectedRowToPreset() {
@@ -1234,26 +1236,26 @@ void MainWindow::onAddSelectedRowToPreset() {
     // Existing entry for same (section,key) is updated.
     const QString rowSnippet = buildSelectedRowSnippet();
     if (rowSnippet.isEmpty()) {
-        QMessageBox::information(this, "Add Selected Row To Preset", "Select one settings row first.");
+        QMessageBox::information(this, tr("Add Selected Row To Preset"), tr("Select one settings row first."));
         return;
     }
 
     QString error;
     QString presetName;
     if (!selectSavedPresetName(presetName, error)) {
-        if (error != QStringLiteral("Cancelled.")) {
-            QMessageBox::information(this, "Add Selected Row To Preset", error);
+        if (error != tr("Cancelled.")) {
+            QMessageBox::information(this, tr("Add Selected Row To Preset"), error);
         }
         return;
     }
 
     if (!mergeSnippetIntoPreset(presetName, rowSnippet, true, error)) {
-        QMessageBox::critical(this, "Add Selected Row To Preset", error);
+        QMessageBox::critical(this, tr("Add Selected Row To Preset"), error);
         return;
     }
 
     logMessage(QStringLiteral("Added selected row to preset \"%1\"").arg(presetName));
-    statusBar()->showMessage("Row added to preset", 2500);
+    statusBar()->showMessage(tr("Row added to preset"), 2500);
 }
 
 void MainWindow::onAddSectionToPresetNoOverride() {
@@ -1266,32 +1268,33 @@ void MainWindow::onAddSectionToPresetNoOverride() {
     }
 
     const QString section =
-        QInputDialog::getText(this, "Add Section To Preset (No Override)", "Section name:", QLineEdit::Normal, defaultSection);
+        QInputDialog::getText(this, tr("Add Section To Preset (No Override)"), tr("Section name:"), QLineEdit::Normal, defaultSection);
     if (section.trimmed().isEmpty()) {
         return;
     }
 
     const QString sectionSnippet = buildSectionSnippet(section);
     if (sectionSnippet.isEmpty()) {
-        QMessageBox::information(this, "Add Section To Preset (No Override)", "No key/value entries were found in that section.");
+        QMessageBox::information(this, tr("Add Section To Preset (No Override)"), tr("No key/value entries were found in that section."));
         return;
     }
 
     QString error;
     QString presetName;
     if (!selectSavedPresetName(presetName, error)) {
-        if (error != QStringLiteral("Cancelled.")) {
-            QMessageBox::information(this, "Add Section To Preset (No Override)", error);
+        if (error != tr("Cancelled.")) {
+            QMessageBox::information(this, tr("Add Section To Preset (No Override)"), error);
         }
         return;
     }
 
     if (!mergeSnippetIntoPreset(presetName, sectionSnippet, false, error)) {
-        QMessageBox::critical(this, "Add Section To Preset (No Override)", error);
+        QMessageBox::critical(this, tr("Add Section To Preset (No Override)"), error);
         return;
     }
 
     logMessage(QStringLiteral("Added section \"%1\" to preset \"%2\" without overriding existing keys")
                    .arg(section.trimmed(), presetName));
-    statusBar()->showMessage("Section merged into preset", 2500);
+    statusBar()->showMessage(tr("Section merged into preset"), 2500);
 }
+

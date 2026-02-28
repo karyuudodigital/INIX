@@ -11,20 +11,22 @@
 
 #include "ui/models/MergePreviewTableModel.h"
 
+#include <QCoreApplication>
+
 namespace {
 // Convert enum status to user-facing table text.
 QString statusToString(SemanticDiffStatus status) {
     switch (status) {
     case SemanticDiffStatus::Added:
-        return "Added";
+        return QCoreApplication::translate("MergePreviewTableModel", "Added");
     case SemanticDiffStatus::Removed:
-        return "Removed";
+        return QCoreApplication::translate("MergePreviewTableModel", "Removed");
     case SemanticDiffStatus::Changed:
-        return "Changed";
+        return QCoreApplication::translate("MergePreviewTableModel", "Changed");
     case SemanticDiffStatus::Unchanged:
-        return "Unchanged";
+        return QCoreApplication::translate("MergePreviewTableModel", "Unchanged");
     }
-    return "Unknown";
+    return QCoreApplication::translate("MergePreviewTableModel", "Unknown");
 }
 } // namespace
 
@@ -89,17 +91,17 @@ QVariant MergePreviewTableModel::headerData(int section, Qt::Orientation orienta
     }
     switch (section) {
     case 0:
-        return "Apply";
+        return tr("Apply");
     case 1:
-        return "Status";
+        return tr("Status");
     case 2:
-        return "Section";
+        return tr("Section");
     case 3:
-        return "Key";
+        return tr("Key");
     case 4:
-        return "Target Value";
+        return tr("Target Value");
     case 5:
-        return "Source Value";
+        return tr("Source Value");
     default:
         return {};
     }

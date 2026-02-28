@@ -14,6 +14,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake"
   "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake"
   "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake"
+  "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeParseArguments.cmake"
   "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeRCInformation.cmake"
   "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake"
   "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake"
@@ -181,6 +182,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake"
   "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake"
   "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake"
+  "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsAdditionalTargetInfo.cmake"
+  "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfig.cmake"
+  "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfigVersion.cmake"
+  "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfigVersionImpl.cmake"
+  "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsDependencies.cmake"
+  "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake"
+  "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsTargets-relwithdebinfo.cmake"
+  "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsTargets.cmake"
+  "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsVersionlessTargets.cmake"
   "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake"
   "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfig.cmake"
   "C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Test/Qt6TestConfigVersion.cmake"
@@ -230,6 +240,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   ".qt/QtDeployTargets.cmake"
+  ".lupdate/INIX_lupdate_project.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/INIX_autogen.dir/AutogenInfo.json"
   "src/CMakeFiles/INIX_autogen.dir/AutoRcc_resources_GBFAFXFCVO_Info.json"
@@ -241,6 +252,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/INIX_lupdate.dir/DependInfo.cmake"
+  "CMakeFiles/update_translations.dir/DependInfo.cmake"
+  "CMakeFiles/INIX_lrelease.dir/DependInfo.cmake"
+  "CMakeFiles/release_translations.dir/DependInfo.cmake"
+  "CMakeFiles/INIX_other_files.dir/DependInfo.cmake"
   "src/CMakeFiles/INIX.dir/DependInfo.cmake"
   "src/CMakeFiles/INIX_autogen_timestamp_deps.dir/DependInfo.cmake"
   "src/CMakeFiles/INIX_autogen.dir/DependInfo.cmake"

@@ -506,5 +506,11 @@ src/CMakeFiles/INIX.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QCoreApplication \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QIcon \
- C:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h
+ C:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QLocale \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QTranslator \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qtranslator.h

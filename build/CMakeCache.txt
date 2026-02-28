@@ -328,6 +328,9 @@ Qt6GuiTools_DIR:PATH=C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6GuiTools
 //The directory containing a CMake configuration file for Qt6Gui.
 Qt6Gui_DIR:PATH=C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Gui
 
+//The directory containing a CMake configuration file for Qt6LinguistTools.
+Qt6LinguistTools_DIR:PATH=C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools
+
 //The directory containing a CMake configuration file for Qt6Test.
 Qt6Test_DIR:PATH=C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Test
 
@@ -1378,6 +1381,8 @@ QT_FEATURE_xmlstreamwriter:INTERNAL=ON
 QT_FEATURE_xrender:INTERNAL=OFF
 //Qt feature: zstd (from target Qt6::Core)
 QT_FEATURE_zstd:INTERNAL=OFF
+//Path to the wrapper of the tool commands
+QT_TOOL_COMMAND_WRAPPER_PATH:INTERNAL=C:/Users/Hunter/Documents/GitHub/INIX/build/.qt/bin/qt_setup_tool_path.bat
 //ADVANCED property for variable: Vulkan_GLSLANG_VALIDATOR_EXECUTABLE
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Vulkan_GLSLC_EXECUTABLE
@@ -1388,4 +1393,5 @@ Vulkan_INCLUDE_DIR-ADVANCED:INTERNAL=1
 Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/IniEditor
+_Qt6_LINGUIST_TOOLS_DIR:INTERNAL=C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6LinguistTools
 

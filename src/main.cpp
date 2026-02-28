@@ -13,7 +13,10 @@
 #include "app/MainWindow.h"
 
 #include <QApplication>
+#include <QCoreApplication>
 #include <QIcon>
+#include <QLocale>
+#include <QTranslator>
 
 int main(int argc, char* argv[]) {
     // QApplication owns global UI state (theme, fonts, event dispatch, clipboard, etc.).
@@ -22,6 +25,17 @@ int main(int argc, char* argv[]) {
     // Load one icon from embedded resources. This works from any working directory.
     const QIcon appIcon(QStringLiteral(":/app-icon.svg"));
     app.setWindowIcon(appIcon);
+
+    // Load application translations from "<exe-dir>/translations".
+    // Prefer the OS UI language (for example en-US), not numeric/date culture.
+    QTranslator appTranslator;
+    const QStringList uiLanguages = QLocale::system().uiLanguages();
+    const QLocale translationLocale =
+        uiLanguages.isEmpty() ? QLocale::system() : QLocale(uiLanguages.at(0));
+    if (appTranslator.load(translationLocale, QStringLiteral("inix"), QStringLiteral("_"),
+                           QCoreApplication::applicationDirPath() + QStringLiteral("/translations"))) {
+        app.installTranslator(&appTranslator);
+    }
 
     // MainWindow wires together domain + services + models + widgets.
     MainWindow window;

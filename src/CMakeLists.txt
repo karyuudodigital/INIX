@@ -2,7 +2,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets Concurrent Test)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets Concurrent Test LinguistTools)
 
 set(APP_SOURCES
     main.cpp
@@ -39,10 +39,24 @@ set(APP_HEADERS
     ui/models/MergePreviewTableModel.h
 )
 
-add_executable(INIX
+add_executable(INIX WIN32
     ${APP_SOURCES}
     ${APP_HEADERS}
 )
 
 target_include_directories(INIX PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(INIX PRIVATE Qt6::Core Qt6::Widgets Qt6::Concurrent)
+
+set(APP_TS_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/translations/inix_ja.ts
+)
+
+qt_add_translations(INIX
+    TS_FILES ${APP_TS_FILES}
+    QM_FILES_OUTPUT_VARIABLE APP_QM_FILES
+)
+
+add_custom_command(TARGET INIX POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:INIX>/translations"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different ${APP_QM_FILES} "$<TARGET_FILE_DIR:INIX>/translations"
+)
