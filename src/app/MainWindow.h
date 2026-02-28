@@ -25,6 +25,7 @@
 
 #include <QFutureWatcher>
 #include <QMainWindow>
+#include <QJsonObject>
 #include <QUndoStack>
 
 class QCheckBox;
@@ -69,6 +70,19 @@ private:
     void runOpenAsync(const QString& path);
     void runCompareOpenAsync(const QString& path);
     void runDiffAsync();
+    QString savedSnippetsPath() const;
+    bool loadSavedSnippets(QJsonObject& snippets, QString* error = nullptr) const;
+    bool writeSavedSnippets(const QJsonObject& snippets, QString* error = nullptr) const;
+    QString buildSectionSnippet(const QString& section) const;
+    QString buildFilteredSetSnippet() const;
+    QString buildSelectedRowSnippet() const;
+    bool saveSnippetByName(const QString& name, const QString& snippet, QString& error);
+    bool selectSavedPresetName(QString& presetName, QString& error) const;
+    bool mergeSnippetIntoPreset(const QString& presetName,
+                                const QString& snippet,
+                                bool overwriteExistingKeys,
+                                QString& error);
+    int applySnippet(const QString& snippet, QString& error);
 
 private slots:
     // User-triggered actions exposed to menus/buttons.
@@ -83,6 +97,13 @@ private slots:
     void onPrepareMergePreview();
     void onApplyMerge();
     void onSearchChanged();
+    void onSaveSectionPreset();
+    void onSaveFilteredPreset();
+    void onApplySavedPreset();
+    void onRenameSavedPreset();
+    void onDeleteSavedPreset();
+    void onAddSelectedRowToPreset();
+    void onAddSectionToPresetNoOverride();
 
 private:
     // Domain state

@@ -480,6 +480,18 @@ src/CMakeFiles/INIX.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QJsonObject \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonobject.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QUndoStack \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qundostack.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QApplication \
@@ -493,7 +505,6 @@ src/CMakeFiles/INIX.dir/main.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QIcon \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h

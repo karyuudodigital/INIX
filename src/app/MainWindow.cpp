@@ -21,15 +21,21 @@
 #include <QComboBox>
 #include <QDockWidget>
 #include <QFileDialog>
+#include <QDir>
 #include <QFuture>
 #include <QHeaderView>
 #include <QInputDialog>
+#include <QJsonDocument>
+#include <QJsonParseError>
+#include <QJsonObject>
 #include <QLabel>
 #include <QLineEdit>
 #include <QListWidget>
 #include <QMenuBar>
 #include <QMessageBox>
+#include <QFileInfo>
 #include <QPushButton>
+#include <QRegularExpression>
 #include <QStatusBar>
 #include <QTableView>
 #include <QTabWidget>
@@ -41,10 +47,108 @@
 #include <QStyleFactory>
 #include <QtConcurrent>
 
+#include <algorithm>
+
 namespace {
 // Shared visual metrics for dock titles and table headers.
 constexpr int kMainHeaderHeight = 36;
 constexpr int kDockTitleVerticalPadding = 10;
+
+struct SnippetEntry {
+    // Represents one semantic INI row used while transforming preset snippets.
+    // This is intentionally independent from IniLine because presets are a compact
+    // transport format (section + key + value) and do not carry formatting metadata.
+    QString section;
+    QString key;
+    QString value;
+};
+
+QString entryToken(const QString& section, const QString& key) {
+    // Case-insensitive identity for "same logical setting".
+    // This is used for merge dedupe and updates.
+    return section.toLower() + QStringLiteral("||") + key.toLower();
+}
+
+QVector<SnippetEntry> parseSnippetEntries(const QString& snippet) {
+    // Parse the lightweight preset text format:
+    // [Section]
+    // key=value
+    // key2=value2
+    //
+    // The parser is permissive:
+    // - blank and comment lines are ignored
+    // - malformed lines are skipped
+    // - key/value lines only apply once a section header is seen
+    QVector<SnippetEntry> entries;
+    QString currentSection;
+
+    const QStringList lines = snippet.split(QRegularExpression("\r\n|\n|\r"), Qt::KeepEmptyParts);
+    for (const QString& rawLine : lines) {
+        const QString trimmed = rawLine.trimmed();
+        if (trimmed.isEmpty() || trimmed.startsWith(';') || trimmed.startsWith('#')) {
+            continue;
+        }
+        if (trimmed.startsWith('[') && trimmed.endsWith(']') && trimmed.size() > 2) {
+            currentSection = trimmed.mid(1, trimmed.size() - 2).trimmed();
+            continue;
+        }
+
+        const int equalsPos = rawLine.indexOf('=');
+        if (equalsPos <= 0 || currentSection.isEmpty()) {
+            continue;
+        }
+        const QString key = rawLine.left(equalsPos).trimmed();
+        if (key.isEmpty()) {
+            continue;
+        }
+
+        entries.push_back(SnippetEntry{
+            .section = currentSection,
+            .key = key,
+            .value = rawLine.mid(equalsPos + 1),
+        });
+    }
+    return entries;
+}
+
+QString buildSnippetFromEntries(const QVector<SnippetEntry>& entries) {
+    // Convert normalized entries back into grouped INI text that can be saved as
+    // a preset value in JSON. Ordering is stable by insertion order.
+    if (entries.isEmpty()) {
+        return {};
+    }
+
+    struct SectionBucket {
+        QString sectionName;
+        QStringList lines;
+    };
+
+    QVector<SectionBucket> buckets;
+    QHash<QString, int> sectionIndex;
+    for (const auto& entry : entries) {
+        const QString token = entry.section.toLower();
+        int bucketIndex = sectionIndex.value(token, -1);
+        if (bucketIndex < 0) {
+            bucketIndex = buckets.size();
+            sectionIndex.insert(token, bucketIndex);
+            buckets.push_back(SectionBucket{
+                .sectionName = entry.section,
+                .lines = {},
+            });
+        }
+        buckets[bucketIndex].lines.push_back(QStringLiteral("%1=%2").arg(entry.key, entry.value));
+    }
+
+    QStringList out;
+    for (int i = 0; i < buckets.size(); ++i) {
+        out.push_back(QStringLiteral("[%1]").arg(buckets[i].sectionName));
+        out.append(buckets[i].lines);
+        if (i + 1 < buckets.size()) {
+            out.push_back(QString());
+        }
+    }
+    return out.join(QStringLiteral("\n"));
+}
 
 // Undo command that restores full-document snapshots before/after merge apply.
 // This keeps undo implementation simple and robust.
@@ -255,6 +359,27 @@ void MainWindow::setupMenus() {
 
     connect(showAllPanelsAction, &QAction::triggered, this, &MainWindow::showAllPanels);
     connect(redockPanelsAction, &QAction::triggered, this, &MainWindow::redockAllPanels);
+
+    auto* presetsMenu = menuBar()->addMenu("&Presets");
+    // Preset actions are grouped by lifecycle:
+    // create/update -> maintenance -> apply.
+    auto* saveSectionPresetAction = presetsMenu->addAction("Save Section Preset...");
+    auto* saveFilteredPresetAction = presetsMenu->addAction("Save Filtered Set Preset...");
+    auto* addSelectedRowToPresetAction = presetsMenu->addAction("Add Selected Row To Preset...");
+    auto* addSectionToPresetNoOverrideAction = presetsMenu->addAction("Add Section To Preset (No Override)...");
+    presetsMenu->addSeparator();
+    auto* renameSavedPresetAction = presetsMenu->addAction("Rename Saved Preset...");
+    auto* deleteSavedPresetAction = presetsMenu->addAction("Delete Saved Preset...");
+    presetsMenu->addSeparator();
+    auto* applySavedPresetAction = presetsMenu->addAction("Apply Saved Preset...");
+
+    connect(saveSectionPresetAction, &QAction::triggered, this, &MainWindow::onSaveSectionPreset);
+    connect(saveFilteredPresetAction, &QAction::triggered, this, &MainWindow::onSaveFilteredPreset);
+    connect(addSelectedRowToPresetAction, &QAction::triggered, this, &MainWindow::onAddSelectedRowToPreset);
+    connect(addSectionToPresetNoOverrideAction, &QAction::triggered, this, &MainWindow::onAddSectionToPresetNoOverride);
+    connect(renameSavedPresetAction, &QAction::triggered, this, &MainWindow::onRenameSavedPreset);
+    connect(deleteSavedPresetAction, &QAction::triggered, this, &MainWindow::onDeleteSavedPreset);
+    connect(applySavedPresetAction, &QAction::triggered, this, &MainWindow::onApplySavedPreset);
 }
 
 void MainWindow::setupConnections() {
@@ -470,6 +595,338 @@ void MainWindow::runDiffAsync() {
     }));
 }
 
+QString MainWindow::savedSnippetsPath() const {
+    // Presets are persisted beside the executable as requested.
+    // This keeps data portable with the app folder.
+    return QDir(QCoreApplication::applicationDirPath()).filePath(QStringLiteral("saved_snippets.json"));
+}
+
+bool MainWindow::loadSavedSnippets(QJsonObject& snippets, QString* error) const {
+    // JSON schema:
+    // {
+    //   "Preset Name": "[Section]\nkey=value\n..."
+    // }
+    //
+    // Each property value is the raw INI snippet string.
+    snippets = QJsonObject{};
+
+    QFile file(savedSnippetsPath());
+    if (!file.exists()) {
+        return true;
+    }
+    if (!file.open(QIODevice::ReadOnly)) {
+        if (error) {
+            *error = QStringLiteral("Unable to open preset file: %1").arg(file.fileName());
+        }
+        return false;
+    }
+
+    QJsonParseError parseError;
+    const QJsonDocument doc = QJsonDocument::fromJson(file.readAll(), &parseError);
+    if (parseError.error != QJsonParseError::NoError) {
+        if (error) {
+            *error = QStringLiteral("Preset file is not valid JSON: %1").arg(parseError.errorString());
+        }
+        return false;
+    }
+    if (!doc.isObject()) {
+        if (error) {
+            *error = QStringLiteral("Preset file must contain a JSON object.");
+        }
+        return false;
+    }
+
+    snippets = doc.object();
+    return true;
+}
+
+bool MainWindow::writeSavedSnippets(const QJsonObject& snippets, QString* error) const {
+    const QString filePath = savedSnippetsPath();
+    const QFileInfo fileInfo(filePath);
+    QDir dir = fileInfo.dir();
+    if (!dir.exists() && !dir.mkpath(QStringLiteral("."))) {
+        if (error) {
+            *error = QStringLiteral("Unable to create preset directory: %1").arg(dir.path());
+        }
+        return false;
+    }
+
+    QFile file(filePath);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
+        if (error) {
+            *error = QStringLiteral("Unable to write preset file: %1").arg(filePath);
+        }
+        return false;
+    }
+
+    // Use indented output for human readability and easier manual inspection.
+    const QJsonDocument doc(snippets);
+    if (file.write(doc.toJson(QJsonDocument::Indented)) < 0) {
+        if (error) {
+            *error = QStringLiteral("Failed to write preset file: %1").arg(filePath);
+        }
+        return false;
+    }
+    return true;
+}
+
+QString MainWindow::buildSectionSnippet(const QString& section) const {
+    // Export only key/value lines from the requested section.
+    // A section header is included so snippet can be parsed/applied later.
+    const QString normalizedSection = section.trimmed();
+    if (normalizedSection.isEmpty()) {
+        return {};
+    }
+
+    QStringList lines;
+    lines.push_back(QStringLiteral("[%1]").arg(normalizedSection));
+
+    for (const auto& line : document_.lines()) {
+        if (line.type != IniLineType::KeyValue) {
+            continue;
+        }
+        if (line.section.compare(normalizedSection, Qt::CaseInsensitive) != 0) {
+            continue;
+        }
+        lines.push_back(QStringLiteral("%1=%2").arg(line.key, line.value));
+    }
+
+    if (lines.size() == 1) {
+        return {};
+    }
+    return lines.join(QStringLiteral("\n"));
+}
+
+QString MainWindow::buildFilteredSetSnippet() const {
+    // Export currently visible rows in proxy order (after search/filter).
+    // This allows users to snapshot arbitrary sets quickly.
+    struct SectionBucket {
+        QString sectionName;
+        QStringList values;
+    };
+
+    QVector<SectionBucket> buckets;
+    QHash<QString, int> sectionIndex;
+
+    const QAbstractItemModel* proxyModel = settingsTable_->model();
+    if (!proxyModel) {
+        return {};
+    }
+
+    for (int row = 0; row < proxyModel->rowCount(); ++row) {
+        const QString section = proxyModel->data(proxyModel->index(row, 0), Qt::DisplayRole).toString().trimmed();
+        const QString key = proxyModel->data(proxyModel->index(row, 1), Qt::DisplayRole).toString();
+        const QString value = proxyModel->data(proxyModel->index(row, 2), Qt::DisplayRole).toString();
+        if (section.isEmpty() || key.isEmpty()) {
+            continue;
+        }
+
+        const QString sectionToken = section.toLower();
+        int bucketIndex = sectionIndex.value(sectionToken, -1);
+        if (bucketIndex < 0) {
+            bucketIndex = buckets.size();
+            sectionIndex.insert(sectionToken, bucketIndex);
+            buckets.push_back(SectionBucket{.sectionName = section, .values = {}});
+        }
+        buckets[bucketIndex].values.push_back(QStringLiteral("%1=%2").arg(key, value));
+    }
+
+    QStringList lines;
+    for (int i = 0; i < buckets.size(); ++i) {
+        const auto& bucket = buckets[i];
+        lines.push_back(QStringLiteral("[%1]").arg(bucket.sectionName));
+        lines.append(bucket.values);
+        if (i + 1 < buckets.size()) {
+            lines.push_back(QString());
+        }
+    }
+
+    return lines.join(QStringLiteral("\n"));
+}
+
+QString MainWindow::buildSelectedRowSnippet() const {
+    const auto proxyIndex = settingsTable_->currentIndex();
+    if (!proxyIndex.isValid()) {
+        return {};
+    }
+
+    const QAbstractItemModel* model = settingsTable_->model();
+    if (!model) {
+        return {};
+    }
+
+    const QString section = model->data(model->index(proxyIndex.row(), 0), Qt::DisplayRole).toString().trimmed();
+    const QString key = model->data(model->index(proxyIndex.row(), 1), Qt::DisplayRole).toString().trimmed();
+    const QString value = model->data(model->index(proxyIndex.row(), 2), Qt::DisplayRole).toString();
+    if (section.isEmpty() || key.isEmpty()) {
+        return {};
+    }
+
+    return QStringLiteral("[%1]\n%2=%3").arg(section, key, value);
+}
+
+bool MainWindow::saveSnippetByName(const QString& name, const QString& snippet, QString& error) {
+    const QString trimmedName = name.trimmed();
+    if (trimmedName.isEmpty()) {
+        error = QStringLiteral("Preset name cannot be empty.");
+        return false;
+    }
+    if (snippet.trimmed().isEmpty()) {
+        error = QStringLiteral("Preset content is empty.");
+        return false;
+    }
+
+    QJsonObject snippets;
+    if (!loadSavedSnippets(snippets, &error)) {
+        return false;
+    }
+
+    // Explicit overwrite confirmation protects against accidental replacement.
+    if (snippets.contains(trimmedName)) {
+        const auto overwrite = QMessageBox::question(this,
+                                                     "Overwrite preset",
+                                                     QStringLiteral("Preset \"%1\" already exists. Overwrite it?").arg(trimmedName));
+        if (overwrite != QMessageBox::Yes) {
+            error = QStringLiteral("Preset save cancelled.");
+            return false;
+        }
+    }
+
+    snippets.insert(trimmedName, snippet);
+    return writeSavedSnippets(snippets, &error);
+}
+
+bool MainWindow::selectSavedPresetName(QString& presetName, QString& error) const {
+    presetName.clear();
+
+    QJsonObject snippets;
+    if (!loadSavedSnippets(snippets, &error)) {
+        return false;
+    }
+    if (snippets.isEmpty()) {
+        error = QStringLiteral("No saved presets were found.");
+        return false;
+    }
+
+    QStringList names = snippets.keys();
+    std::sort(names.begin(), names.end(), [](const QString& a, const QString& b) {
+        return a.compare(b, Qt::CaseInsensitive) < 0;
+    });
+
+    bool accepted = false;
+    // QInputDialog static API expects QWidget* parent. This helper is const
+    // because it does not mutate logical MainWindow state.
+    const QString selected =
+        QInputDialog::getItem(const_cast<MainWindow*>(this), "Choose Preset", "Preset:", names, 0, false, &accepted);
+    if (!accepted || selected.isEmpty()) {
+        error = QStringLiteral("Cancelled.");
+        return false;
+    }
+
+    presetName = selected;
+    return true;
+}
+
+bool MainWindow::mergeSnippetIntoPreset(const QString& presetName,
+                                        const QString& snippet,
+                                        bool overwriteExistingKeys,
+                                        QString& error) {
+    // Merge strategy:
+    // - Read existing preset snippet into normalized entries.
+    // - Read incoming snippet entries.
+    // - Match by case-insensitive (section,key).
+    // - Add new entries always.
+    // - Update existing values only when overwriteExistingKeys == true.
+    const QString normalizedName = presetName.trimmed();
+    if (normalizedName.isEmpty()) {
+        error = QStringLiteral("Preset name cannot be empty.");
+        return false;
+    }
+
+    QJsonObject snippets;
+    if (!loadSavedSnippets(snippets, &error)) {
+        return false;
+    }
+    if (!snippets.contains(normalizedName)) {
+        error = QStringLiteral("Preset \"%1\" does not exist.").arg(normalizedName);
+        return false;
+    }
+
+    const QVector<SnippetEntry> existingEntries = parseSnippetEntries(snippets.value(normalizedName).toString());
+    const QVector<SnippetEntry> incomingEntries = parseSnippetEntries(snippet);
+    if (incomingEntries.isEmpty()) {
+        error = QStringLiteral("No valid key/value rows were found to add.");
+        return false;
+    }
+
+    QVector<SnippetEntry> merged = existingEntries;
+    QHash<QString, int> entryIndex;
+    for (int i = 0; i < merged.size(); ++i) {
+        entryIndex.insert(entryToken(merged[i].section, merged[i].key), i);
+    }
+
+    for (const auto& item : incomingEntries) {
+        const QString token = entryToken(item.section, item.key);
+        const int idx = entryIndex.value(token, -1);
+        if (idx < 0) {
+            entryIndex.insert(token, merged.size());
+            merged.push_back(item);
+            continue;
+        }
+        if (overwriteExistingKeys) {
+            merged[idx].value = item.value;
+        }
+    }
+
+    snippets.insert(normalizedName, buildSnippetFromEntries(merged));
+    return writeSavedSnippets(snippets, &error);
+}
+
+int MainWindow::applySnippet(const QString& snippet, QString& error) {
+    // Apply strategy mirrors preset parsing behavior:
+    // - parse section headers + key/value rows
+    // - ignore comments/blank/malformed lines
+    // - upsert each valid row into document_
+    //
+    // Upsert semantics:
+    // - existing key in section -> value updated
+    // - missing key -> inserted
+    int applied = 0;
+    QString currentSection;
+    const QStringList lines = snippet.split(QRegularExpression("\r\n|\n|\r"), Qt::KeepEmptyParts);
+    for (const QString& rawLine : lines) {
+        const QString trimmed = rawLine.trimmed();
+        if (trimmed.isEmpty() || trimmed.startsWith(';') || trimmed.startsWith('#')) {
+            continue;
+        }
+
+        if (trimmed.startsWith('[') && trimmed.endsWith(']') && trimmed.size() > 2) {
+            currentSection = trimmed.mid(1, trimmed.size() - 2).trimmed();
+            continue;
+        }
+
+        const int equalsPos = rawLine.indexOf('=');
+        if (equalsPos <= 0 || currentSection.isEmpty()) {
+            continue;
+        }
+
+        const QString key = rawLine.left(equalsPos).trimmed();
+        const QString value = rawLine.mid(equalsPos + 1);
+        if (key.isEmpty()) {
+            continue;
+        }
+
+        if (document_.upsertSetting(currentSection, key, value)) {
+            ++applied;
+        }
+    }
+
+    if (applied == 0) {
+        error = QStringLiteral("Preset contains no applicable key/value entries.");
+    }
+    return applied;
+}
+
 // ----- Slots: file/document actions -----
 
 void MainWindow::onOpenFile() {
@@ -606,3 +1063,235 @@ void MainWindow::onApplyMerge() {
 }
 
 void MainWindow::onSearchChanged() { filterProxyModel_.setSearchOptions(currentSearchOptions()); }
+
+void MainWindow::onSaveSectionPreset() {
+    // Saves one section from the current in-memory document into JSON presets.
+    QString defaultSection;
+    const auto current = settingsTable_->currentIndex();
+    if (current.isValid()) {
+        defaultSection = settingsTable_->model()->data(settingsTable_->model()->index(current.row(), 0), Qt::DisplayRole).toString();
+    }
+
+    const QString section = QInputDialog::getText(this, "Save Section Preset", "Section name:", QLineEdit::Normal, defaultSection);
+    if (section.trimmed().isEmpty()) {
+        return;
+    }
+
+    const QString snippet = buildSectionSnippet(section);
+    if (snippet.isEmpty()) {
+        QMessageBox::information(this, "Save Section Preset", "No key/value entries were found in that section.");
+        return;
+    }
+
+    const QString presetName = QInputDialog::getText(this, "Save Section Preset", "Preset name:");
+    if (presetName.trimmed().isEmpty()) {
+        return;
+    }
+
+    QString error;
+    if (!saveSnippetByName(presetName, snippet, error)) {
+        if (error != QStringLiteral("Preset save cancelled.")) {
+            QMessageBox::critical(this, "Save Section Preset", error);
+        }
+        return;
+    }
+
+    logMessage(QStringLiteral("Saved section preset \"%1\"").arg(presetName.trimmed()));
+    statusBar()->showMessage("Section preset saved", 2500);
+}
+
+void MainWindow::onSaveFilteredPreset() {
+    // Saves the exact visible subset from the filtered proxy table.
+    const QString snippet = buildFilteredSetSnippet();
+    if (snippet.trimmed().isEmpty()) {
+        QMessageBox::information(this, "Save Filtered Set Preset", "No visible values are available to save.");
+        return;
+    }
+
+    const QString presetName = QInputDialog::getText(this, "Save Filtered Set Preset", "Preset name:");
+    if (presetName.trimmed().isEmpty()) {
+        return;
+    }
+
+    QString error;
+    if (!saveSnippetByName(presetName, snippet, error)) {
+        if (error != QStringLiteral("Preset save cancelled.")) {
+            QMessageBox::critical(this, "Save Filtered Set Preset", error);
+        }
+        return;
+    }
+
+    logMessage(QStringLiteral("Saved filtered preset \"%1\"").arg(presetName.trimmed()));
+    statusBar()->showMessage("Filtered preset saved", 2500);
+}
+
+void MainWindow::onApplySavedPreset() {
+    // User picks a preset by name, then snippet is parsed and upserted.
+    QString error;
+    QString selectedName;
+    if (!selectSavedPresetName(selectedName, error)) {
+        if (error != QStringLiteral("Cancelled.")) {
+            QMessageBox::information(this, "Apply Saved Preset", error);
+        }
+        return;
+    }
+
+    QJsonObject snippets;
+    if (!loadSavedSnippets(snippets, &error)) {
+        QMessageBox::critical(this, "Apply Saved Preset", error);
+        return;
+    }
+
+    const QString snippet = snippets.value(selectedName).toString();
+    const int appliedCount = applySnippet(snippet, error);
+    if (appliedCount <= 0) {
+        QMessageBox::critical(this, "Apply Saved Preset", error);
+        return;
+    }
+
+    QMessageBox::information(this,
+                             "Apply Saved Preset",
+                             QStringLiteral("Applied preset \"%1\".\nUpdated entries: %2")
+                                 .arg(selectedName)
+                                 .arg(appliedCount));
+    logMessage(QStringLiteral("Applied preset \"%1\" (%2 entries)").arg(selectedName).arg(appliedCount));
+    statusBar()->showMessage(QStringLiteral("Applied preset: %1").arg(selectedName), 2500);
+}
+
+void MainWindow::onRenameSavedPreset() {
+    // Renames JSON key while preserving snippet payload exactly.
+    QString error;
+    QString oldName;
+    if (!selectSavedPresetName(oldName, error)) {
+        if (error != QStringLiteral("Cancelled.")) {
+            QMessageBox::information(this, "Rename Saved Preset", error);
+        }
+        return;
+    }
+
+    const QString newName =
+        QInputDialog::getText(this, "Rename Saved Preset", "New preset name:", QLineEdit::Normal, oldName);
+    if (newName.trimmed().isEmpty() || newName.trimmed() == oldName) {
+        return;
+    }
+
+    QJsonObject snippets;
+    if (!loadSavedSnippets(snippets, &error)) {
+        QMessageBox::critical(this, "Rename Saved Preset", error);
+        return;
+    }
+    if (snippets.contains(newName.trimmed())) {
+        QMessageBox::critical(this, "Rename Saved Preset", "A preset with that name already exists.");
+        return;
+    }
+
+    const QString content = snippets.value(oldName).toString();
+    snippets.remove(oldName);
+    snippets.insert(newName.trimmed(), content);
+    if (!writeSavedSnippets(snippets, &error)) {
+        QMessageBox::critical(this, "Rename Saved Preset", error);
+        return;
+    }
+
+    logMessage(QStringLiteral("Renamed preset \"%1\" to \"%2\"").arg(oldName, newName.trimmed()));
+    statusBar()->showMessage("Preset renamed", 2500);
+}
+
+void MainWindow::onDeleteSavedPreset() {
+    // Removes one preset entry from the JSON dictionary.
+    QString error;
+    QString presetName;
+    if (!selectSavedPresetName(presetName, error)) {
+        if (error != QStringLiteral("Cancelled.")) {
+            QMessageBox::information(this, "Delete Saved Preset", error);
+        }
+        return;
+    }
+
+    const auto confirm =
+        QMessageBox::question(this, "Delete Saved Preset", QStringLiteral("Delete preset \"%1\"?").arg(presetName));
+    if (confirm != QMessageBox::Yes) {
+        return;
+    }
+
+    QJsonObject snippets;
+    if (!loadSavedSnippets(snippets, &error)) {
+        QMessageBox::critical(this, "Delete Saved Preset", error);
+        return;
+    }
+    snippets.remove(presetName);
+    if (!writeSavedSnippets(snippets, &error)) {
+        QMessageBox::critical(this, "Delete Saved Preset", error);
+        return;
+    }
+
+    logMessage(QStringLiteral("Deleted preset \"%1\"").arg(presetName));
+    statusBar()->showMessage("Preset deleted", 2500);
+}
+
+void MainWindow::onAddSelectedRowToPreset() {
+    // Adds the currently selected row into an existing preset.
+    // Existing entry for same (section,key) is updated.
+    const QString rowSnippet = buildSelectedRowSnippet();
+    if (rowSnippet.isEmpty()) {
+        QMessageBox::information(this, "Add Selected Row To Preset", "Select one settings row first.");
+        return;
+    }
+
+    QString error;
+    QString presetName;
+    if (!selectSavedPresetName(presetName, error)) {
+        if (error != QStringLiteral("Cancelled.")) {
+            QMessageBox::information(this, "Add Selected Row To Preset", error);
+        }
+        return;
+    }
+
+    if (!mergeSnippetIntoPreset(presetName, rowSnippet, true, error)) {
+        QMessageBox::critical(this, "Add Selected Row To Preset", error);
+        return;
+    }
+
+    logMessage(QStringLiteral("Added selected row to preset \"%1\"").arg(presetName));
+    statusBar()->showMessage("Row added to preset", 2500);
+}
+
+void MainWindow::onAddSectionToPresetNoOverride() {
+    // Merges a section into an existing preset while preserving any existing
+    // values already present in that preset for matching keys.
+    QString defaultSection;
+    const auto current = settingsTable_->currentIndex();
+    if (current.isValid()) {
+        defaultSection = settingsTable_->model()->data(settingsTable_->model()->index(current.row(), 0), Qt::DisplayRole).toString();
+    }
+
+    const QString section =
+        QInputDialog::getText(this, "Add Section To Preset (No Override)", "Section name:", QLineEdit::Normal, defaultSection);
+    if (section.trimmed().isEmpty()) {
+        return;
+    }
+
+    const QString sectionSnippet = buildSectionSnippet(section);
+    if (sectionSnippet.isEmpty()) {
+        QMessageBox::information(this, "Add Section To Preset (No Override)", "No key/value entries were found in that section.");
+        return;
+    }
+
+    QString error;
+    QString presetName;
+    if (!selectSavedPresetName(presetName, error)) {
+        if (error != QStringLiteral("Cancelled.")) {
+            QMessageBox::information(this, "Add Section To Preset (No Override)", error);
+        }
+        return;
+    }
+
+    if (!mergeSnippetIntoPreset(presetName, sectionSnippet, false, error)) {
+        QMessageBox::critical(this, "Add Section To Preset (No Override)", error);
+        return;
+    }
+
+    logMessage(QStringLiteral("Added section \"%1\" to preset \"%2\" without overriding existing keys")
+                   .arg(section.trimmed(), presetName));
+    statusBar()->showMessage("Section merged into preset", 2500);
+}

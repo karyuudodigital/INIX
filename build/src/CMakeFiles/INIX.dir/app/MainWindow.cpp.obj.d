@@ -480,6 +480,18 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QJsonObject \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonobject.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QUndoStack \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qundostack.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
@@ -495,7 +507,6 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QCheckBox \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qcheckbox.h \
@@ -520,8 +531,6 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdirlisting.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qfiledevice.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qdatetime.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qcalendar.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qfile.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/filesystem \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_fwd.h \
@@ -531,8 +540,9 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qfileinfo.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qtimezone.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QDir \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qdir.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QFuture \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qfuture.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QHeaderView \
@@ -548,6 +558,10 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QJsonDocument \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QJsonParseError \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qlabel.h \
  C:/Qt/6.10.2/mingw_64/include/QtGui/qpicture.h \
@@ -562,6 +576,8 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmessagebox.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/QFileInfo \
+ C:/Qt/6.10.2/mingw_64/include/QtCore/qfileinfo.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
@@ -636,9 +652,6 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcache.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcalendar.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcborarray.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcbormap.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qcborstream.h \
@@ -673,7 +686,6 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdatetime.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qdir.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdiriterator.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qdirlisting.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qeasingcurve.h \
@@ -685,7 +697,6 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qfactoryinterface.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qfile.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qfiledevice.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qfileinfo.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qfileselector.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
  C:/Qt/6.10.2/mingw_64/include/QtCore/QStringList \
@@ -707,12 +718,6 @@ src/CMakeFiles/INIX.dir/app/MainWindow.cpp.obj: \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qiterable.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qiterator.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonarray.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonobject.h \
- C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qlatin1stringmatcher.h \
  C:/Qt/6.10.2/mingw_64/include/QtCore/qlatin1stringview.h \

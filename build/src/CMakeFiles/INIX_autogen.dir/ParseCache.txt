@@ -5,6 +5,7 @@ C:/Users/Hunter/Documents/GitHub/INIX/src/app/MainWindow.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QAbstractTableModel
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QByteArray
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QFutureWatcher
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QJsonObject
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QObject
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QRegularExpression
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/QSortFilterProxyModel
@@ -35,6 +36,9 @@ C:/Users/Hunter/Documents/GitHub/INIX/src/app/MainWindow.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qbytearrayalgorithms.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qbytearraylist.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qbytearrayview.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qcalendar.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qchar.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qcheckedint_impl.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qcompare.h
@@ -49,6 +53,7 @@ C:/Users/Hunter/Documents/GitHub/INIX/src/app/MainWindow.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qcontiguouscache.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qdarwinhelpers.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qdatastream.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qdatetime.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qendian.h
@@ -71,9 +76,14 @@ C:/Users/Hunter/Documents/GitHub/INIX/src/app/MainWindow.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevicebase.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qiterable.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qiterator.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonobject.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qlatin1stringview.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qline.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qlogging.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qmalloc.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qmap.h
@@ -148,7 +158,9 @@ C:/Users/Hunter/Documents/GitHub/INIX/src/app/MainWindow.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtversionchecks.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtypeinfo.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qtypes.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qutf8stringview.h
+ mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qvariant.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qvarlengtharray.h
  mdp:C:/Qt/6.10.2/mingw_64/include/QtCore/qvector.h
