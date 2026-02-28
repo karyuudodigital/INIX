@@ -1,0 +1,1 @@
+-I"C:/Users/Hunter/DOWNLO~1/INIEDI~1/BUILD-~2/tests/INI_ED~1/include" -IC:/Users/Hunter/DOWNLO~1/INIEDI~1/tests/../src -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem "C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++" -isystem C:/Qt/6.10.2/mingw_64/include/QtTest

@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/ini_editor_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/ini_editor_autogen.dir/ParseCache.txt"
+  "ini_editor_autogen"
+  "CMakeFiles/ini_editor.dir/app/MainWindow.cpp.obj"
+  "CMakeFiles/ini_editor.dir/app/MainWindow.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/domain/IniDocument.cpp.obj"
+  "CMakeFiles/ini_editor.dir/domain/IniDocument.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/ini_editor_autogen/mocs_compilation.cpp.obj"
+  "CMakeFiles/ini_editor.dir/ini_editor_autogen/mocs_compilation.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/main.cpp.obj"
+  "CMakeFiles/ini_editor.dir/main.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/services/IniDiffService.cpp.obj"
+  "CMakeFiles/ini_editor.dir/services/IniDiffService.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/services/IniMergeService.cpp.obj"
+  "CMakeFiles/ini_editor.dir/services/IniMergeService.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/services/IniParser.cpp.obj"
+  "CMakeFiles/ini_editor.dir/services/IniParser.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/services/IniSearchService.cpp.obj"
+  "CMakeFiles/ini_editor.dir/services/IniSearchService.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/services/IniSerializer.cpp.obj"
+  "CMakeFiles/ini_editor.dir/services/IniSerializer.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/ui/models/DiffTableModel.cpp.obj"
+  "CMakeFiles/ini_editor.dir/ui/models/DiffTableModel.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/ui/models/IniFilterProxyModel.cpp.obj"
+  "CMakeFiles/ini_editor.dir/ui/models/IniFilterProxyModel.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/ui/models/IniSettingsTableModel.cpp.obj"
+  "CMakeFiles/ini_editor.dir/ui/models/IniSettingsTableModel.cpp.obj.d"
+  "CMakeFiles/ini_editor.dir/ui/models/MergePreviewTableModel.cpp.obj"
+  "CMakeFiles/ini_editor.dir/ui/models/MergePreviewTableModel.cpp.obj.d"
+  "ini_editor.exe"
+  "ini_editor.exe.manifest"
+  "ini_editor.pdb"
+  "libini_editor.dll.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/ini_editor.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

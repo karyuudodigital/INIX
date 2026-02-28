@@ -1,0 +1,15 @@
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/CMakeFiles/test.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/CMakeFiles/edit_cache.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/CMakeFiles/rebuild_cache.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/src/CMakeFiles/ini_editor.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/src/CMakeFiles/test.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/src/CMakeFiles/edit_cache.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/src/CMakeFiles/rebuild_cache.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/src/CMakeFiles/ini_editor_autogen_timestamp_deps.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/src/CMakeFiles/ini_editor_autogen.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/tests/CMakeFiles/ini_editor_tests.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/tests/CMakeFiles/test.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/tests/CMakeFiles/edit_cache.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/tests/CMakeFiles/rebuild_cache.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/tests/CMakeFiles/ini_editor_tests_autogen_timestamp_deps.dir
+C:/Users/Hunter/Downloads/Ini editor/build-mingw2/tests/CMakeFiles/ini_editor_tests_autogen.dir
