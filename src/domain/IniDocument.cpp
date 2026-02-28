@@ -1,8 +1,24 @@
+/*
+    File: domain/IniDocument.cpp
+    Purpose:
+      - Implements mutable INI document operations and change notification.
+
+    How it fits in the codebase:
+      - Acts as the canonical state store for editor data.
+      - UI models read from this object.
+      - Services and MainWindow mutate it through explicit methods.
+
+    Qt notes:
+      - IniDocument inherits QObject and emits changed() whenever observable state changes.
+      - Views refresh by listening to that signal through model adapters.
+*/
+
 #include "domain/IniDocument.h"
 
 IniDocument::IniDocument(QObject* parent) : QObject(parent) {}
 
 void IniDocument::clear() {
+    // Return to a clean default state equivalent to a brand-new document.
     lines_.clear();
     path_.clear();
     encoding_ = IniEncoding::Utf8;
@@ -16,6 +32,7 @@ bool IniDocument::isEmpty() const { return lines_.isEmpty(); }
 bool IniDocument::isDirty() const { return dirty_; }
 
 void IniDocument::setDirty(bool dirty) {
+    // Dirty flag is part of observable state, so we notify listeners.
     dirty_ = dirty;
     emit changed();
 }
@@ -35,12 +52,14 @@ void IniDocument::setLineEnding(const QString& lineEnding) { lineEnding_ = lineE
 const QVector<IniLine>& IniDocument::lines() const { return lines_; }
 
 void IniDocument::setLines(QVector<IniLine> lines) {
+    // This method is used after parse/restore. Incoming lines become authoritative.
     lines_ = std::move(lines);
     dirty_ = false;
     emit changed();
 }
 
 QVector<IniSettingEntry> IniDocument::keyValueEntries() const {
+    // Flatten parsed lines into table rows used by UI models.
     QVector<IniSettingEntry> entries;
     entries.reserve(lines_.size());
     for (int i = 0; i < lines_.size(); ++i) {
@@ -60,6 +79,7 @@ QVector<IniSettingEntry> IniDocument::keyValueEntries() const {
 }
 
 bool IniDocument::updateSettingValue(int lineIndex, const QString& value) {
+    // Guard invalid indices and non-key/value lines.
     if (lineIndex < 0 || lineIndex >= lines_.size()) {
         return false;
     }
@@ -67,6 +87,7 @@ bool IniDocument::updateSettingValue(int lineIndex, const QString& value) {
     if (line.type != IniLineType::KeyValue) {
         return false;
     }
+    // Keep rawText synchronized so serializer can preserve edited values.
     line.value = value;
     line.rawText = QStringLiteral("%1=%2").arg(line.key, line.value);
     dirty_ = true;
@@ -82,6 +103,7 @@ bool IniDocument::updateSettingKey(int lineIndex, const QString& key) {
     if (line.type != IniLineType::KeyValue) {
         return false;
     }
+    // Key edits preserve value and regenerate canonical "key=value" text.
     line.key = key.trimmed();
     line.rawText = QStringLiteral("%1=%2").arg(line.key, line.value);
     dirty_ = true;
@@ -95,6 +117,8 @@ bool IniDocument::addSection(const QString& section) {
         return false;
     }
 
+    // Insert a blank spacer line followed by the section header line.
+    // sourceLine is recomputed based on current insertion position.
     lines_.push_back(IniLine{
         .type = IniLineType::Blank,
         .rawText = QString(),
@@ -124,6 +148,9 @@ bool IniDocument::addSetting(const QString& section, const QString& key, const Q
         return false;
     }
 
+    // Find insertion point:
+    // 1) Inside existing section (after last line in that section), or
+    // 2) End of file after creating section if missing.
     int insertIndex = lines_.size();
     bool seenSection = false;
     for (int i = 0; i < lines_.size(); ++i) {
@@ -141,10 +168,12 @@ bool IniDocument::addSetting(const QString& section, const QString& key, const Q
     }
 
     if (!seenSection) {
+        // Creates section + blank separator and marks document dirty.
         addSection(normalizedSection);
         insertIndex = lines_.size();
     }
 
+    // Insert new key/value line and normalize sourceLine metadata.
     lines_.insert(insertIndex, IniLine{
                                   .type = IniLineType::KeyValue,
                                   .rawText = QStringLiteral("%1=%2").arg(normalizedKey, value),
@@ -167,6 +196,7 @@ bool IniDocument::deleteSetting(int lineIndex) {
     if (lineIndex < 0 || lineIndex >= lines_.size() || lines_[lineIndex].type != IniLineType::KeyValue) {
         return false;
     }
+    // Remove the row and renumber sourceLine so UI reflects contiguous line numbers.
     lines_.removeAt(lineIndex);
     for (int i = 0; i < lines_.size(); ++i) {
         lines_[i].sourceLine = i + 1;
@@ -182,6 +212,7 @@ bool IniDocument::deleteSection(const QString& section) {
         return false;
     }
 
+    // Identify the section range [startIndex, endIndex) to remove.
     int startIndex = -1;
     int endIndex = lines_.size();
     for (int i = 0; i < lines_.size(); ++i) {
@@ -201,6 +232,7 @@ bool IniDocument::deleteSection(const QString& section) {
         return false;
     }
 
+    // Remove section header and all lines until next section header or EOF.
     lines_.remove(startIndex, endIndex - startIndex);
     for (int i = 0; i < lines_.size(); ++i) {
         lines_[i].sourceLine = i + 1;
@@ -212,6 +244,7 @@ bool IniDocument::deleteSection(const QString& section) {
 
 bool IniDocument::findSetting(const QString& section, const QString& key, int& lineIndex) const {
     lineIndex = -1;
+    // Search from bottom to top so "last occurrence wins" for duplicate keys.
     for (int i = lines_.size() - 1; i >= 0; --i) {
         const auto& line = lines_[i];
         if (line.type != IniLineType::KeyValue) {
@@ -235,6 +268,7 @@ QString IniDocument::getSettingValue(const QString& section, const QString& key)
 }
 
 bool IniDocument::upsertSetting(const QString& section, const QString& key, const QString& value) {
+    // Update existing key when present, otherwise append a new setting.
     int existingLine = -1;
     if (findSetting(section, key, existingLine)) {
         return updateSettingValue(existingLine, value);
@@ -243,6 +277,7 @@ bool IniDocument::upsertSetting(const QString& section, const QString& key, cons
 }
 
 IniDocumentSnapshot IniDocument::snapshot() const {
+    // Cheap value-type snapshot used by parser handoff and undo/redo command.
     return IniDocumentSnapshot{
         .lines = lines_,
         .encoding = encoding_,
@@ -252,6 +287,7 @@ IniDocumentSnapshot IniDocument::snapshot() const {
 }
 
 void IniDocument::restore(const IniDocumentSnapshot& snapshot) {
+    // Restore all persisted fields in one operation.
     lines_ = snapshot.lines;
     encoding_ = snapshot.encoding;
     lineEnding_ = snapshot.lineEnding;
@@ -259,4 +295,3 @@ void IniDocument::restore(const IniDocumentSnapshot& snapshot) {
     dirty_ = true;
     emit changed();
 }
-

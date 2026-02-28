@@ -1,0 +1,22 @@
+{
+	"BUILD_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/build/src/INIX_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/build/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/src",
+	"CMAKE_SOURCE_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "MinGW Makefiles",
+	"INCLUDE_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/build/src/INIX_autogen/include",
+	"INPUTS" : [ "C:/Users/Hunter/Documents/GitHub/INIX/src/assets/icon.svg" ],
+	"LOCK_FILE" : "C:/Users/Hunter/Documents/GitHub/INIX/build/src/CMakeFiles/INIX_autogen.dir/AutoRcc_resources_GBFAFXFCVO_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "GBFAFXFCVO",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/6.10.2/mingw_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/Users/Hunter/Documents/GitHub/INIX/build/src/CMakeFiles/INIX_autogen.dir/AutoRcc_resources_GBFAFXFCVO_Used.txt",
+	"SOURCE" : "C:/Users/Hunter/Documents/GitHub/INIX/src/assets/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

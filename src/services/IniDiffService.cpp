@@ -1,3 +1,15 @@
+/*
+    File: services/IniDiffService.cpp
+    Purpose:
+      - Implements two diff levels:
+        1) Raw positional text summary.
+        2) Semantic diff keyed by (section,key).
+
+    How it fits in the codebase:
+      - MainWindow computes these in background and publishes to diff/merge UI.
+      - Semantic output is reused by IniMergeService.
+*/
+
 #include "services/IniDiffService.h"
 
 #include <algorithm>
@@ -5,6 +17,7 @@
 #include <QSet>
 
 namespace {
+// Produce a stable key token for hash-based lookups.
 QString canonicalToken(const QString& section, const QString& key, bool caseInsensitive) {
     const QString s = caseInsensitive ? section.toLower() : section;
     const QString k = caseInsensitive ? key.toLower() : key;
@@ -17,6 +30,7 @@ TextDiffSummary IniDiffService::buildTextSummary(const IniDocument& baseDoc, con
     const auto& b = compareDoc.lines();
     TextDiffSummary summary;
     const int shared = std::min(a.size(), b.size());
+    // Compare shared prefix by index. This is fast but intentionally not LCS/Myers.
     for (int i = 0; i < shared; ++i) {
         if (a[i].rawText != b[i].rawText) {
             ++summary.changedLines;
@@ -33,6 +47,7 @@ TextDiffSummary IniDiffService::buildTextSummary(const IniDocument& baseDoc, con
 QVector<SemanticDiffItem> IniDiffService::buildSemanticDiff(const IniDocument& baseDoc,
                                                             const IniDocument& compareDoc,
                                                             bool caseInsensitiveKeys) const {
+    // Accumulator tracks whether each token appears in base/compare and stores values.
     struct Accumulator {
         SemanticDiffItem item;
         bool hasBase = false;
@@ -42,6 +57,7 @@ QVector<SemanticDiffItem> IniDiffService::buildSemanticDiff(const IniDocument& b
     QHash<QString, Accumulator> table;
     QSet<QString> keys;
 
+    // Build map from base entries.
     for (const auto& entry : baseDoc.keyValueEntries()) {
         const QString token = canonicalToken(entry.section, entry.key, caseInsensitiveKeys);
         keys.insert(token);
@@ -51,6 +67,7 @@ QVector<SemanticDiffItem> IniDiffService::buildSemanticDiff(const IniDocument& b
         acc.item.baseValue = entry.value;
         acc.hasBase = true;
     }
+    // Merge compare entries into same map.
     for (const auto& entry : compareDoc.keyValueEntries()) {
         const QString token = canonicalToken(entry.section, entry.key, caseInsensitiveKeys);
         keys.insert(token);
@@ -61,6 +78,7 @@ QVector<SemanticDiffItem> IniDiffService::buildSemanticDiff(const IniDocument& b
         acc.hasCompare = true;
     }
 
+    // Resolve final status for each key.
     QVector<SemanticDiffItem> output;
     output.reserve(keys.size());
     for (const auto& token : keys) {
@@ -78,6 +96,7 @@ QVector<SemanticDiffItem> IniDiffService::buildSemanticDiff(const IniDocument& b
         output.push_back(std::move(item));
     }
 
+    // UI-friendly sort by section then key.
     std::sort(output.begin(), output.end(), [](const SemanticDiffItem& lhs, const SemanticDiffItem& rhs) {
         if (lhs.section.compare(rhs.section, Qt::CaseInsensitive) == 0) {
             return lhs.key.compare(rhs.key, Qt::CaseInsensitive) < 0;

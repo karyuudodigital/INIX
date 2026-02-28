@@ -1,6 +1,0 @@
-set(__QT_DEPLOY_TARGET_ini_editor_FILE C:/Users/Hunter/Downloads/Ini editor/build-mingw2/src/ini_editor.exe)
-set(__QT_DEPLOY_TARGET_ini_editor_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_ini_editor_RUNTIME_DLLS C:/Qt/6.10.2/mingw_64/bin/Qt6Widgets.dll;C:/Qt/6.10.2/mingw_64/bin/Qt6Concurrent.dll;C:/Qt/6.10.2/mingw_64/bin/Qt6Gui.dll;C:/Qt/6.10.2/mingw_64/bin/Qt6Core.dll)
-set(__QT_DEPLOY_TARGET_ini_editor_tests_FILE C:/Users/Hunter/Downloads/Ini editor/build-mingw2/tests/ini_editor_tests.exe)
-set(__QT_DEPLOY_TARGET_ini_editor_tests_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_ini_editor_tests_RUNTIME_DLLS C:/Qt/6.10.2/mingw_64/bin/Qt6Test.dll;C:/Qt/6.10.2/mingw_64/bin/Qt6Core.dll)

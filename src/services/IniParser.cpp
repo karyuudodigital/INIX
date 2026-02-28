@@ -1,3 +1,17 @@
+/*
+    File: services/IniParser.cpp
+    Purpose:
+      - Implements byte/text parsing into typed INI lines with section tracking.
+
+    How it fits in the codebase:
+      - MainWindow calls parseFile() asynchronously for open/compare actions.
+      - Produces IniDocumentSnapshot consumed by IniDocument::restore().
+
+    Parsing model:
+      - Each source line becomes one IniLine with a type and optional section/key/value payload.
+      - Current section is carried forward until another section header appears.
+*/
+
 #include "services/IniParser.h"
 
 #include <QFile>
@@ -5,6 +19,7 @@
 #include <QStringDecoder>
 
 namespace {
+// Preserve original line ending style so save operations can round-trip it.
 QString detectLineEnding(const QString& text) {
     if (text.contains("\r\n")) {
         return "\r\n";
@@ -17,6 +32,7 @@ QString detectLineEnding(const QString& text) {
 } // namespace
 
 IniParseResult IniParser::parseFile(const QString& filePath) const {
+    // QFile handles platform-specific file APIs and Unicode paths.
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
         return {.ok = false, .error = QStringLiteral("Unable to open file: %1").arg(filePath)};
@@ -25,6 +41,7 @@ IniParseResult IniParser::parseFile(const QString& filePath) const {
 }
 
 IniParseResult IniParser::parseText(const QByteArray& bytes, const QString& sourcePath) const {
+    // Detect decode strategy first, then split into physical lines.
     IniEncoding encoding = IniEncoding::Utf8;
     const QString text = decodeBytes(bytes, encoding);
     const QString lineEnding = detectLineEnding(text);
@@ -41,6 +58,8 @@ IniParseResult IniParser::parseText(const QByteArray& bytes, const QString& sour
         parsedLine.rawText = line;
         parsedLine.sourceLine = i + 1;
 
+        // Classification order matters:
+        // blank -> comment -> section -> key/value -> malformed fallback
         if (trimmed.isEmpty()) {
             parsedLine.type = IniLineType::Blank;
         } else if (trimmed.startsWith(';') || trimmed.startsWith('#')) {
@@ -52,6 +71,7 @@ IniParseResult IniParser::parseText(const QByteArray& bytes, const QString& sour
         } else {
             const int equalsPos = line.indexOf('=');
             if (equalsPos > 0) {
+                // Section is inherited from nearest previous section header.
                 parsedLine.type = IniLineType::KeyValue;
                 parsedLine.section = currentSection;
                 parsedLine.key = line.left(equalsPos).trimmed();
@@ -73,11 +93,13 @@ IniParseResult IniParser::parseText(const QByteArray& bytes, const QString& sour
 }
 
 QString IniParser::decodeBytes(const QByteArray& bytes, IniEncoding& encodingOut) const {
+    // Explicit BOM check first.
     if (bytes.startsWith("\xEF\xBB\xBF")) {
         encodingOut = IniEncoding::Utf8Bom;
         return QString::fromUtf8(bytes.mid(3));
     }
 
+    // Try strict UTF-8 decoding.
     QStringDecoder utf8Decoder(QStringDecoder::Utf8);
     const QString utf8Decoded = utf8Decoder.decode(bytes);
     if (!utf8Decoder.hasError()) {
@@ -85,6 +107,7 @@ QString IniParser::decodeBytes(const QByteArray& bytes, IniEncoding& encodingOut
         return utf8Decoded;
     }
 
+    // Final fallback: local code page bytes.
     encodingOut = IniEncoding::Local8Bit;
     return QString::fromLocal8Bit(bytes);
 }

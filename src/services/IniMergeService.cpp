@@ -1,6 +1,17 @@
+/*
+    File: services/IniMergeService.cpp
+    Purpose:
+      - Implements merge preview creation and merge application policies.
+
+    How it fits in the codebase:
+      - Input comes from semantic diff output.
+      - Output feeds MergePreviewTableModel and then writes into IniDocument.
+*/
+
 #include "services/IniMergeService.h"
 
 QVector<MergePreviewItem> IniMergeService::buildPreview(const QVector<SemanticDiffItem>& semanticDiff) const {
+    // Remove rows that do not represent actionable changes for merge.
     QVector<MergePreviewItem> preview;
     preview.reserve(semanticDiff.size());
     for (const auto& item : semanticDiff) {
@@ -25,10 +36,13 @@ MergeApplySummary IniMergeService::applyPreview(IniDocument& target,
                                                 const std::function<bool(const MergePreviewItem&)>& promptCallback) const {
     MergeApplySummary summary;
     for (const auto& item : previewItems) {
+        // Unchecked rows are counted as skipped and never applied.
         if (!item.selected) {
             ++summary.skipped;
             continue;
         }
+
+        // "Changed with different values" is treated as a conflict candidate.
         const bool conflict = item.status == SemanticDiffStatus::Changed && item.targetValue != item.sourceValue;
         bool shouldReplace = false;
         if (item.status == SemanticDiffStatus::Added) {
@@ -58,6 +72,7 @@ MergeApplySummary IniMergeService::applyPreview(IniDocument& target,
             }
         }
         if (shouldReplace) {
+            // upsertSetting performs update-if-exists or add-if-missing.
             target.upsertSetting(item.section, item.key, item.sourceValue);
         }
     }

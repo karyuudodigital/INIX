@@ -1,0 +1,1 @@
+-IC:/Users/Hunter/Documents/GitHub/INIX/build/tests/ini_editor_tests_autogen/include -IC:/Users/Hunter/Documents/GitHub/INIX/tests/../src -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem "C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++" -isystem C:/Qt/6.10.2/mingw_64/include/QtTest

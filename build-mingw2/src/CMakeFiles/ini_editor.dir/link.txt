@@ -1,3 +1,0 @@
-C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\ini_editor.dir/objects.a
-C:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\ini_editor.dir/objects.a @CMakeFiles\ini_editor.dir\objects1.rsp
-C:\Qt\Tools\mingw1310_64\bin\c++.exe -O3 -DNDEBUG -Wl,--whole-archive CMakeFiles\ini_editor.dir/objects.a -Wl,--no-whole-archive -o ini_editor.exe -Wl,--out-implib,libini_editor.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ini_editor.dir\linkLibs.rsp

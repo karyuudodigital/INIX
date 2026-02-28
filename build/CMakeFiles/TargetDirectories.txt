@@ -1,0 +1,15 @@
+C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/test.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/edit_cache.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/src/CMakeFiles/INIX.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/src/CMakeFiles/test.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/src/CMakeFiles/edit_cache.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/src/CMakeFiles/rebuild_cache.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/src/CMakeFiles/INIX_autogen_timestamp_deps.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/src/CMakeFiles/INIX_autogen.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/tests/CMakeFiles/ini_editor_tests.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/tests/CMakeFiles/test.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/tests/CMakeFiles/edit_cache.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/tests/CMakeFiles/rebuild_cache.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/tests/CMakeFiles/ini_editor_tests_autogen_timestamp_deps.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build/tests/CMakeFiles/ini_editor_tests_autogen.dir

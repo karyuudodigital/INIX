@@ -1,6 +1,18 @@
+/*
+    File: ui/models/MergePreviewTableModel.cpp
+    Purpose:
+      - Implements merge preview rows with checkbox-based selection.
+
+    How it fits in the codebase:
+      - Populated from IniMergeService preview output.
+      - Edited by user selection controls in MainWindow.
+      - Consumed by apply merge operation.
+*/
+
 #include "ui/models/MergePreviewTableModel.h"
 
 namespace {
+// Convert enum status to user-facing table text.
 QString statusToString(SemanticDiffStatus status) {
     switch (status) {
     case SemanticDiffStatus::Added:
@@ -19,6 +31,7 @@ QString statusToString(SemanticDiffStatus status) {
 MergePreviewTableModel::MergePreviewTableModel(QObject* parent) : QAbstractTableModel(parent) {}
 
 void MergePreviewTableModel::setItems(QVector<MergePreviewItem> items) {
+    // Reset model after replacing row vector.
     beginResetModel();
     items_ = std::move(items);
     endResetModel();
@@ -47,6 +60,7 @@ QVariant MergePreviewTableModel::data(const QModelIndex& index, int role) const 
         return {};
     }
     const auto& item = items_[index.row()];
+    // First column is checkbox state.
     if (role == Qt::CheckStateRole && index.column() == 0) {
         return item.selected ? Qt::Checked : Qt::Unchecked;
     }
@@ -106,6 +120,7 @@ bool MergePreviewTableModel::setData(const QModelIndex& index, const QVariant& v
     if (!index.isValid() || index.row() < 0 || index.row() >= items_.size()) {
         return false;
     }
+    // Only checkbox column is editable.
     if (index.column() == 0 && role == Qt::CheckStateRole) {
         items_[index.row()].selected = value.toInt() == Qt::Checked;
         emit dataChanged(index, index, {Qt::CheckStateRole});
@@ -115,6 +130,7 @@ bool MergePreviewTableModel::setData(const QModelIndex& index, const QVariant& v
 }
 
 void MergePreviewTableModel::selectByStatus(SemanticDiffStatus status) {
+    // Batch-select only rows with matching semantic status.
     for (auto& item : items_) {
         item.selected = item.status == status;
     }
@@ -124,6 +140,7 @@ void MergePreviewTableModel::selectByStatus(SemanticDiffStatus status) {
 }
 
 void MergePreviewTableModel::selectAll(bool selected) {
+    // Batch-select or clear all rows.
     for (auto& item : items_) {
         item.selected = selected;
     }
@@ -131,4 +148,3 @@ void MergePreviewTableModel::selectAll(bool selected) {
         emit dataChanged(index(0, 0), index(items_.size() - 1, 0), {Qt::CheckStateRole});
     }
 }
-

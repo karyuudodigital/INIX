@@ -1,3 +1,18 @@
+/*
+    File: app/MainWindow.cpp
+    Purpose:
+      - Implements the top-level UI composition and interaction logic for INIX.
+
+    How it fits in the codebase:
+      - Owns concrete widgets, models, and service instances.
+      - Connects menu/button/search events to domain/service operations.
+      - Launches parse/diff work on background threads via QtConcurrent and updates UI on completion.
+
+    Design notes:
+      - Data logic remains in domain/services. This file focuses on orchestration.
+      - Qt object ownership uses parent-child relationships to avoid manual delete calls.
+*/
+
 #include "app/MainWindow.h"
 
 #include <QAction>
@@ -27,6 +42,12 @@
 #include <QtConcurrent>
 
 namespace {
+// Shared visual metrics for dock titles and table headers.
+constexpr int kMainHeaderHeight = 36;
+constexpr int kDockTitleVerticalPadding = 10;
+
+// Undo command that restores full-document snapshots before/after merge apply.
+// This keeps undo implementation simple and robust.
 class MergeApplyCommand final : public QUndoCommand {
 public:
     MergeApplyCommand(IniDocument* document, IniDocumentSnapshot before, IniDocumentSnapshot after)
@@ -44,17 +65,21 @@ private:
 };
 } // namespace
 
+// ----- Construction and UI composition -----
+
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent),
       settingsModel_(this),
       filterProxyModel_(this),
       diffTableModel_(this),
       mergePreviewModel_(this) {
+    // Build widget tree and interaction wiring first.
     setupUi();
     setupMenus();
     setupConnections();
     applyDarkTheme();
 
+    // Connect domain document to table models/proxies.
     settingsModel_.setDocument(&document_);
     filterProxyModel_.setSourceModel(&settingsModel_);
     settingsTable_->setModel(&filterProxyModel_);
@@ -67,8 +92,10 @@ MainWindow::MainWindow(QWidget* parent)
 }
 
 void MainWindow::setupUi() {
+    // Window base size. Users can resize freely after startup.
     resize(1280, 820);
 
+    // Search toolbar drives proxy filtering.
     auto* searchToolbar = addToolBar("Search");
     searchEdit_ = new QLineEdit(this);
     searchEdit_->setPlaceholderText("Search section/key/value...");
@@ -82,14 +109,16 @@ void MainWindow::setupUi() {
     searchToolbar->addWidget(regexCheck_);
     searchToolbar->addWidget(searchCountLabel_);
 
+    // Central table: target INI settings.
     settingsTable_ = new QTableView(this);
     settingsTable_->setSelectionBehavior(QAbstractItemView::SelectRows);
     settingsTable_->setSelectionMode(QAbstractItemView::SingleSelection);
     settingsTable_->setAlternatingRowColors(true);
     settingsTable_->horizontalHeader()->setStretchLastSection(true);
-    settingsTable_->horizontalHeader()->setFixedHeight(36);
+    settingsTable_->horizontalHeader()->setFixedHeight(kMainHeaderHeight);
     setCentralWidget(settingsTable_);
 
+    // Left dock: opened file list/history.
     filesDock_ = new QDockWidget("Files", this);
     filesDock_->setObjectName("filesDock");
     filesDock_->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable |
@@ -98,6 +127,7 @@ void MainWindow::setupUi() {
     filesDock_->setWidget(fileList_);
     addDockWidget(Qt::LeftDockWidgetArea, filesDock_);
 
+    // Right dock: diff and merge workflows in a tab widget.
     diffMergeDock_ = new QDockWidget("Diff / Merge", this);
     diffMergeDock_->setObjectName("diffMergeDock");
     diffMergeDock_->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable |
@@ -111,7 +141,7 @@ void MainWindow::setupUi() {
     diffSummaryLabel_ = new QLabel("Diff: not computed", diffTab);
     diffTable_ = new QTableView(diffTab);
     diffTable_->horizontalHeader()->setStretchLastSection(true);
-    diffTable_->horizontalHeader()->setFixedHeight(36);
+    diffTable_->horizontalHeader()->setFixedHeight(kMainHeaderHeight);
     diffLayout->addWidget(loadCompareButton);
     diffLayout->addWidget(recomputeDiffButton);
     diffLayout->addWidget(diffSummaryLabel_);
@@ -130,7 +160,7 @@ void MainWindow::setupUi() {
     auto* applyMergeButton = new QPushButton("Apply Merge", mergeTab);
     mergeTable_ = new QTableView(mergeTab);
     mergeTable_->horizontalHeader()->setStretchLastSection(true);
-    mergeTable_->horizontalHeader()->setFixedHeight(36);
+    mergeTable_->horizontalHeader()->setFixedHeight(kMainHeaderHeight);
 
     mergeLayout->addWidget(previewButton);
     mergeLayout->addWidget(selectAllButton);
@@ -146,6 +176,7 @@ void MainWindow::setupUi() {
     diffMergeDock_->setWidget(tabs);
     addDockWidget(Qt::RightDockWidgetArea, diffMergeDock_);
 
+    // Bottom dock: append-only status log.
     statusDock_ = new QDockWidget("Status / Log", this);
     statusDock_->setObjectName("statusDock");
     statusDock_->setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable |
@@ -155,6 +186,7 @@ void MainWindow::setupUi() {
     statusDock_->setWidget(logOutput_);
     addDockWidget(Qt::BottomDockWidgetArea, statusDock_);
 
+    // Object names are used for findChild wiring in setupConnections().
     loadCompareButton->setObjectName("loadCompareButton");
     recomputeDiffButton->setObjectName("recomputeDiffButton");
     previewButton->setObjectName("previewMergeButton");
@@ -166,6 +198,7 @@ void MainWindow::setupUi() {
 }
 
 void MainWindow::setupMenus() {
+    // File menu contains open/save lifecycle actions.
     auto* fileMenu = menuBar()->addMenu("&File");
     auto* openAction = fileMenu->addAction("Open...");
     auto* saveAction = fileMenu->addAction("Save");
@@ -180,6 +213,7 @@ void MainWindow::setupMenus() {
     openCompareAction->setShortcut(QKeySequence("Ctrl+D"));
     quitAction->setShortcut(QKeySequence("Ctrl+Q"));
 
+    // Edit menu includes undo stack actions and document mutation commands.
     auto* editMenu = menuBar()->addMenu("&Edit");
     auto* undoAction = undoStack_.createUndoAction(this, "Undo");
     auto* redoAction = undoStack_.createRedoAction(this, "Redo");
@@ -195,6 +229,9 @@ void MainWindow::setupMenus() {
     auto* focusSearchAction = editMenu->addAction("Focus Search");
     focusSearchAction->setShortcut(QKeySequence("Ctrl+F"));
 
+    // Signals/slots wiring:
+    // sender signal -> receiver slot/lambda
+    // Qt automatically disconnects links when QObject receivers are destroyed.
     connect(openAction, &QAction::triggered, this, &MainWindow::onOpenFile);
     connect(saveAction, &QAction::triggered, this, &MainWindow::onSaveFile);
     connect(saveAsAction, &QAction::triggered, this, &MainWindow::onSaveAsFile);
@@ -206,6 +243,7 @@ void MainWindow::setupMenus() {
     connect(deleteSectionAction, &QAction::triggered, this, &MainWindow::onDeleteSection);
     connect(focusSearchAction, &QAction::triggered, searchEdit_, [this] { searchEdit_->setFocus(); });
 
+    // View menu exposes dock visibility and layout recovery actions.
     auto* viewMenu = menuBar()->addMenu("&View");
     viewMenu->addAction(filesDock_->toggleViewAction());
     viewMenu->addAction(diffMergeDock_->toggleViewAction());
@@ -220,20 +258,24 @@ void MainWindow::setupMenus() {
 }
 
 void MainWindow::setupConnections() {
+    // Any domain change updates title/dirty marker and re-runs active filtering.
     connect(&document_, &IniDocument::changed, this, [this] {
         updateWindowTitle();
         filterProxyModel_.invalidate();
     });
 
+    // Search controls all trigger the same filter refresh path.
     connect(searchEdit_, &QLineEdit::textChanged, this, &MainWindow::onSearchChanged);
     connect(caseSensitiveCheck_, &QCheckBox::toggled, this, &MainWindow::onSearchChanged);
     connect(regexCheck_, &QCheckBox::toggled, this, &MainWindow::onSearchChanged);
 
+    // Proxy emits visible row count and regex validity for UI feedback.
     connect(&filterProxyModel_, &IniFilterProxyModel::filterApplied, this, [this](int visibleCount, bool regexValid) {
         const QString suffix = regexValid ? QString() : QStringLiteral(" (invalid regex)");
         searchCountLabel_->setText(QStringLiteral("Matches: %1%2").arg(visibleCount).arg(suffix));
     });
 
+    // Async open result handler (runs on GUI thread after watcher signals finished()).
     connect(&openWatcher_, &QFutureWatcher<IniParseResult>::finished, this, [this] {
         const auto result = openWatcher_.result();
         if (!result.ok) {
@@ -248,6 +290,7 @@ void MainWindow::setupConnections() {
         statusBar()->showMessage("File opened", 2000);
     });
 
+    // Async compare-open result handler.
     connect(&compareOpenWatcher_, &QFutureWatcher<IniParseResult>::finished, this, [this] {
         const auto result = compareOpenWatcher_.result();
         if (!result.ok) {
@@ -260,6 +303,7 @@ void MainWindow::setupConnections() {
         runDiffAsync();
     });
 
+    // Async diff result handler.
     connect(&diffWatcher_, &QFutureWatcher<DiffComputationResult>::finished, this, [this] {
         const auto result = diffWatcher_.result();
         diffTableModel_.setItems(result.items);
@@ -270,6 +314,7 @@ void MainWindow::setupConnections() {
         statusBar()->showMessage("Diff complete", 2500);
     });
 
+    // Button lookups are done by objectName so setupUi and setupConnections remain decoupled.
     if (auto* button = findChild<QPushButton*>("loadCompareButton")) {
         connect(button, &QPushButton::clicked, this, &MainWindow::onOpenCompareFile);
     }
@@ -297,12 +342,14 @@ void MainWindow::setupConnections() {
 }
 
 void MainWindow::applyDarkTheme() {
+    // Acquire global QApplication instance to apply app-wide style and palette.
     auto* app = qobject_cast<QApplication*>(QCoreApplication::instance());
     if (!app) {
         return;
     }
     app->setStyle(QStyleFactory::create("Fusion"));
 
+    // Palette controls base colors used by Fusion style.
     QPalette palette;
     palette.setColor(QPalette::Window, QColor(30, 30, 30));
     palette.setColor(QPalette::WindowText, QColor(212, 212, 212));
@@ -319,15 +366,16 @@ void MainWindow::applyDarkTheme() {
     palette.setColor(QPalette::PlaceholderText, QColor(133, 133, 133));
     app->setPalette(palette);
 
-    setStyleSheet(
+    // Style sheet applies widget-specific overrides.
+    setStyleSheet(QString(
         "QMainWindow { background-color: #1e1e1e; border: 1px solid #3c3c3c; }"
         "QMainWindow::separator { background: rgba(220, 220, 220, 0.55); width: 1px; height: 1px; }"
         "QToolBar { background-color: #2d2d30; border: none; spacing: 8px; padding: 8px; }"
         "QStatusBar { background: #007acc; color: #ffffff; border: none; }"
         "QDockWidget { color: #d4d4d4; font-weight: 600; background: #252526; border: none; padding-top: 0px; }"
-        "QDockWidget::title { background: #2d2d30; color: #cccccc; padding: 0px 10px; margin: 0px; border: none; min-height: 64px; }"
-        "QDockWidget::close-button, QDockWidget::float-button { background: #3c3c3c; border: none; }"
-        "QDockWidget::close-button:hover, QDockWidget::float-button:hover { background: #505050; }"
+        "QDockWidget::title { background: #2d2d30; color: #cccccc; padding: %2px 10px; margin: 0px; border: none; height: %1px; min-height: %1px; max-height: %1px; }"
+        "QDockWidget::close-button, QDockWidget::float-button { background: transparent; border: none; image: none; }"
+        "QDockWidget::close-button:hover, QDockWidget::float-button:hover { background: transparent; }"
         "QMenuBar { background: #2d2d30; color: #d4d4d4; border: none; }"
         "QMenuBar::item:selected { background: #3e3e42; border: none; }"
         "QMenu { background: #252526; border: 1px solid #3c3c3c; color: #d4d4d4; padding: 4px; }"
@@ -344,15 +392,19 @@ void MainWindow::applyDarkTheme() {
         "QCheckBox::indicator { width: 15px; height: 15px; border: 1px solid #5a5a5a; background: #1e1e1e; }"
         "QCheckBox::indicator:checked { background: #007acc; border: 1px solid #007acc; }"
         "QListWidget, QTextEdit, QTableView { background: #1e1e1e; color: #d4d4d4; border: none; gridline-color: #2d2d30; selection-background-color: #094771; selection-color: #ffffff; }"
-        "QTableView QHeaderView::section:horizontal { background: #2d2d30; color: #d4d4d4; border: none; border-bottom: 1px solid #3c3c3c; padding: 0px 8px; min-height: 64px; font-weight: 600; }"
+        "QTableView QHeaderView::section:horizontal { background: #2d2d30; color: #d4d4d4; border: none; border-bottom: 1px solid #3c3c3c; padding: 0px 8px; min-height: %1px; max-height: %1px; font-weight: 600; }"
         "QTableCornerButton::section { background: #2d2d30; border: none; border-bottom: 1px solid #3c3c3c; }"
         "QScrollBar:vertical { background: #252526; width: 12px; margin: 0px; border: none; }"
         "QScrollBar::handle:vertical { background: #424242; min-height: 24px; border: none; }"
         "QScrollBar::handle:vertical:hover { background: #4f4f4f; }"
         "QScrollBar:horizontal { background: #252526; height: 12px; margin: 0px; border: none; }"
         "QScrollBar::handle:horizontal { background: #424242; min-width: 24px; border: none; }"
-        "QToolTip { background: #252526; color: #d4d4d4; border: 1px solid #3c3c3c; }");
+        "QToolTip { background: #252526; color: #d4d4d4; border: 1px solid #3c3c3c; }")
+                      .arg(kMainHeaderHeight)
+                      .arg(kDockTitleVerticalPadding));
 }
+
+// ----- Layout helpers -----
 
 void MainWindow::showAllPanels() {
     filesDock_->show();
@@ -361,6 +413,7 @@ void MainWindow::showAllPanels() {
 }
 
 void MainWindow::redockAllPanels() {
+    // Return docks to deterministic default positions.
     showAllPanels();
 
     filesDock_->setFloating(false);
@@ -373,12 +426,15 @@ void MainWindow::redockAllPanels() {
 }
 
 void MainWindow::updateWindowTitle() {
+    // Title reflects current file path and dirty marker.
     const QString fileName = document_.path().isEmpty() ? QStringLiteral("Untitled") : document_.path();
     const QString dirtyMarker = document_.isDirty() ? QStringLiteral("*") : QString();
-    setWindowTitle(QStringLiteral("INI Editor - %1%2").arg(fileName, dirtyMarker));
+    setWindowTitle(QStringLiteral("INIX - %1%2").arg(fileName, dirtyMarker));
 }
 
 void MainWindow::logMessage(const QString& message) { logOutput_->append(message); }
+
+// ----- Search and async operations -----
 
 SearchOptions MainWindow::currentSearchOptions() const {
     return SearchOptions{
@@ -389,6 +445,7 @@ SearchOptions MainWindow::currentSearchOptions() const {
 }
 
 void MainWindow::runOpenAsync(const QString& path) {
+    // QtConcurrent::run executes parser on worker thread and returns QFuture.
     statusBar()->showMessage("Opening file...");
     openWatcher_.setFuture(QtConcurrent::run([this, path] { return parser_.parseFile(path); }));
 }
@@ -404,6 +461,7 @@ void MainWindow::runDiffAsync() {
         return;
     }
     statusBar()->showMessage("Computing diff...");
+    // Compute both text summary and semantic diff off the UI thread.
     diffWatcher_.setFuture(QtConcurrent::run([this] {
         DiffComputationResult output;
         output.summary = diffService_.buildTextSummary(document_, compareDocument_);
@@ -411,6 +469,8 @@ void MainWindow::runDiffAsync() {
         return output;
     }));
 }
+
+// ----- Slots: file/document actions -----
 
 void MainWindow::onOpenFile() {
     const QString path = QFileDialog::getOpenFileName(this, "Open INI", QString(), "INI Files (*.ini);;All Files (*.*)");
@@ -421,6 +481,7 @@ void MainWindow::onOpenFile() {
 }
 
 void MainWindow::onSaveFile() {
+    // Delegate to Save As if path is unknown.
     if (document_.path().isEmpty()) {
         onSaveAsFile();
         return;
@@ -463,6 +524,7 @@ void MainWindow::onAddSetting() {
 }
 
 void MainWindow::onDeleteSelectedSetting() {
+    // Selection lives in proxy coordinates; convert back to source model row.
     const auto proxyIndex = settingsTable_->currentIndex();
     if (!proxyIndex.isValid()) {
         return;
@@ -495,7 +557,10 @@ void MainWindow::onOpenCompareFile() {
     runCompareOpenAsync(path);
 }
 
+// ----- Slots: diff and merge -----
+
 void MainWindow::onPrepareMergePreview() {
+    // If diff is stale/missing, trigger recompute first.
     if (diffTableModel_.items().isEmpty()) {
         runDiffAsync();
         return;
@@ -509,6 +574,7 @@ void MainWindow::onApplyMerge() {
         QMessageBox::information(this, "Merge", "Prepare a merge preview first.");
         return;
     }
+    // Translate combo index to explicit enum policy.
     MergeConflictPolicy policy = MergeConflictPolicy::ReplaceTarget;
     if (conflictPolicyCombo_->currentIndex() == 1) {
         policy = MergeConflictPolicy::KeepTarget;
@@ -516,6 +582,7 @@ void MainWindow::onApplyMerge() {
         policy = MergeConflictPolicy::PromptPerConflict;
     }
 
+    // Snapshot full state so operation is undoable in one command.
     const auto before = document_.snapshot();
     const auto summary = mergeService_.applyPreview(
         document_, previewItems, policy, [this](const MergePreviewItem& item) {

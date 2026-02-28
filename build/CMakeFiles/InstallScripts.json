@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Hunter/Documents/GitHub/INIX/build/cmake_install.cmake",
+		"C:/Users/Hunter/Documents/GitHub/INIX/build/src/cmake_install.cmake",
+		"C:/Users/Hunter/Documents/GitHub/INIX/build/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
