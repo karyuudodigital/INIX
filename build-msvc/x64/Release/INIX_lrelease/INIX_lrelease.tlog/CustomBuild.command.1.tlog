@@ -1,0 +1,30 @@
+^C:\USERS\HUNTER\DOCUMENTS\GITHUB\INIX\BUILD-MSVC\CMAKEFILES\90DA3031FF20B39BCFE86D6AF0D90404\INIX_JA.QM.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/src
+if %errorlevel% neq 0 goto :cmEnd
+call .qt\bin\qt_setup_tool_path.bat C:/Qt/6.10.2/msvc2022_64/bin/lrelease.exe C:/Users/Hunter/Documents/GitHub/INIX/src/translations/inix_ja.ts -qm C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/src/inix_ja.qm
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\HUNTER\DOCUMENTS\GITHUB\INIX\BUILD-MSVC\CMAKEFILES\456D6EA6E26E5AB73E881E128AE9E89A\INIX_LRELEASE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\HUNTER\DOCUMENTS\GITHUB\INIX\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Hunter/Documents/GitHub/INIX -BC:/Users/Hunter/Documents/GitHub/INIX/build-msvc --check-stamp-file C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

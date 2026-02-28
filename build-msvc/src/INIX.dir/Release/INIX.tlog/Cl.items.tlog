@@ -1,0 +1,14 @@
+C:\Users\Hunter\Documents\GitHub\INIX\src\main.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\main.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\app\MainWindow.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\MainWindow.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\domain\IniDocument.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\IniDocument.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniParser.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\IniParser.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniSerializer.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\IniSerializer.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniDiffService.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\IniDiffService.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniMergeService.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\IniMergeService.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniSearchService.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\IniSearchService.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\IniSettingsTableModel.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\IniSettingsTableModel.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\IniFilterProxyModel.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\IniFilterProxyModel.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\DiffTableModel.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\DiffTableModel.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\MergePreviewTableModel.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\MergePreviewTableModel.obj
+C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\mocs_compilation_Release.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\mocs_compilation_Release.obj
+C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\GBFAFXFCVO\qrc_resources_Release.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX.dir\Release\qrc_resources_Release.obj

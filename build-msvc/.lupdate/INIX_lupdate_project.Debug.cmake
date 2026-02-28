@@ -1,0 +1,17 @@
+set(lupdate_project_file "C:/Users/Hunter/Documents/GitHub/INIX/CMakeLists.txt")
+set(lupdate_translations "C:/Users/Hunter/Documents/GitHub/INIX/src/translations/inix_ja.ts")
+set(lupdate_include_paths "")
+set(lupdate_sources "")
+set(lupdate_subproject_count 2)
+
+set(lupdate_subproject1_source_dir "C:/Users/Hunter/Documents/GitHub/INIX/src")
+set(lupdate_subproject1_include_paths "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/src/INIX_autogen/include_Debug;C:/Users/Hunter/Documents/GitHub/INIX/src;C:/Qt/6.10.2/msvc2022_64/include/QtCore;C:/Qt/6.10.2/msvc2022_64/include;C:/Qt/6.10.2/msvc2022_64/mkspecs/win32-msvc;C:/Qt/6.10.2/msvc2022_64/include;C:/Qt/6.10.2/msvc2022_64/include/QtWidgets;C:/Qt/6.10.2/msvc2022_64/include;C:/Qt/6.10.2/msvc2022_64/include/QtGui;C:/Qt/6.10.2/msvc2022_64/include;C:/Qt/6.10.2/msvc2022_64/include/QtConcurrent;C:/Qt/6.10.2/msvc2022_64/include")
+set(lupdate_subproject1_sources "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/src/INIX_autogen/mocs_compilation_Debug.cpp;main.cpp;assets/resources.qrc;app/MainWindow.cpp;domain/IniDocument.cpp;services/IniParser.cpp;services/IniSerializer.cpp;services/IniDiffService.cpp;services/IniMergeService.cpp;services/IniSearchService.cpp;ui/models/IniSettingsTableModel.cpp;ui/models/IniFilterProxyModel.cpp;ui/models/DiffTableModel.cpp;ui/models/MergePreviewTableModel.cpp;assets/app_icon.rc;app/MainWindow.h;domain/IniTypes.h;domain/IniDocument.h;services/IniParser.h;services/IniSerializer.h;services/IniDiffService.h;services/IniMergeService.h;services/IniSearchService.h;ui/models/IniSettingsTableModel.h;ui/models/IniFilterProxyModel.h;ui/models/DiffTableModel.h;ui/models/MergePreviewTableModel.h;C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/src/INIX_autogen/GBFAFXFCVO/qrc_resources_Debug.cpp;C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/5c716fc9d69bf1294f498f5cf8b21920/qrc_resources_(CONFIG).cpp.rule")
+set(lupdate_subproject1_excluded "")
+set(lupdate_subproject1_autogen_dir "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/src/INIX_autogen")
+
+set(lupdate_subproject2_source_dir "C:/Users/Hunter/Documents/GitHub/INIX/tests")
+set(lupdate_subproject2_include_paths "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/include_Debug;C:/Users/Hunter/Documents/GitHub/INIX/tests/../src;C:/Qt/6.10.2/msvc2022_64/include/QtCore;C:/Qt/6.10.2/msvc2022_64/include;C:/Qt/6.10.2/msvc2022_64/mkspecs/win32-msvc;C:/Qt/6.10.2/msvc2022_64/include;C:/Qt/6.10.2/msvc2022_64/include/QtTest;C:/Qt/6.10.2/msvc2022_64/include")
+set(lupdate_subproject2_sources "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/mocs_compilation_Debug.cpp;IniCoreTests.cpp;../src/domain/IniDocument.cpp;../src/services/IniParser.cpp;../src/services/IniSerializer.cpp;../src/services/IniDiffService.cpp;../src/services/IniMergeService.cpp;../src/services/IniSearchService.cpp")
+set(lupdate_subproject2_excluded "")
+set(lupdate_subproject2_autogen_dir "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen")

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\app\MainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\domain\IniDocument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniSerializer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniDiffService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniMergeService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniSearchService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\IniSettingsTableModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\IniFilterProxyModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\DiffTableModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\MergePreviewTableModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\GBFAFXFCVO\qrc_resources_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\GBFAFXFCVO\qrc_resources_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\GBFAFXFCVO\qrc_resources_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\src\INIX_autogen\GBFAFXFCVO\qrc_resources_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\app\MainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\domain\IniTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\domain\IniDocument.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniSerializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniDiffService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniMergeService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniSearchService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\IniSettingsTableModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\IniFilterProxyModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\DiffTableModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Hunter\Documents\GitHub\INIX\src\ui\models\MergePreviewTableModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\CMakeFiles\5c716fc9d69bf1294f498f5cf8b21920\qrc_resources_(CONFIG).cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Hunter\Documents\GitHub\INIX\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Hunter\Documents\GitHub\INIX\src\assets\resources.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\assets\app_icon.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5C3CDBFB-2263-3CA3-B3D7-2083B24EE33B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{334232A5-6D34-3772-8B0F-7619417F3E9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{A53623EF-14EF-3F00-94DA-13F06C3F9D71}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

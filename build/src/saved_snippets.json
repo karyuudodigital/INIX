@@ -1,4 +1,0 @@
-{
-    "Skyrim": "[Display]\nbDeactivateAOOnSnow=0\nbLockFrameRate=0\nbVolumetricLightingDisableInterior=1\nfDDOFFocusCenterweightExt=2\nfDecalLifetime=300\nfDefaultWorldFOV=96.42\nfDOFMaxDepthParticipation=10000\nfDynamicDOFFarBlur=0.4\nfFirstSliceDistance=3500\nfGlobalBrightnessBoost=0.0000\nfGlobalContrastBoost=0.0000\nfGlobalSaturationBoost=0.0000\nfLightLODRange=45000\nfLightLODStartFade=3500.0\nfMaxHeightShadowCastingTrees=5000\nfShadowDirectionalBiasScale=0.15\nfSparklesIntensity=0.3\nfSunShadowUpdateTime=1\nfSunUpdateThreshold=0.5\nfTreesMidLODSwitchDist=9999999.0000\n\n[Actor]\nbUseNavMeshForMovement=0",
-    "TESTDISPLAY": "[Display]\niSize W=2560\niSize H=1440\nbFull Screen=0\n\n[General]\ntestkey=testval"
-}

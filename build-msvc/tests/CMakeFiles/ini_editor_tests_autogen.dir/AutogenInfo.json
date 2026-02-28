@@ -1,0 +1,338 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/tests",
+	"CMAKE_EXECUTABLE" : "C:/Program Files/CMake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"C:/Users/Hunter/Documents/GitHub/INIX/tests/CMakeLists.txt",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/Qt6ConfigExtras.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtInstallPaths.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/Qt6Targets.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtFeature.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CheckCXXCompilerFlag.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtFeatureCommon.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicGitHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomCommonGenerationHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomDocumentNamespaceHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomGenerationCycloneDXHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicTestHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/FindThreads.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CheckLibraryExists.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CheckIncludeFileCXX.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CheckCXXSourceCompiles.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6/FindWrapAtomic.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CheckCXXSourceCompiles.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-debug.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessAliasTargets.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreTargets-debug.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/Qt6TestConfigVersion.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/Qt6TestConfigVersionImpl.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/Qt6TestConfig.cmake",
+		"C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/Qt6TestDependencies.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/Qt6TestTargets.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/Qt6TestTargets-debug.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/Qt6TestTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/QtTestProperties.cmake",
+		"C:/Qt/6.10.2/msvc2022_64/lib/cmake/Qt6Test/Qt6TestVersionlessAliasTargets.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/domain/IniDocument.h",
+			"Mu",
+			"RCFEFXN5P7/moc_IniDocument.cpp",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniDiffService.h",
+			"Mu",
+			"YL4LF2FQ7G/moc_IniDiffService.cpp",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniMergeService.h",
+			"Mu",
+			"YL4LF2FQ7G/moc_IniMergeService.cpp",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniParser.h",
+			"Mu",
+			"YL4LF2FQ7G/moc_IniParser.cpp",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniSearchService.h",
+			"Mu",
+			"YL4LF2FQ7G/moc_IniSearchService.cpp",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniSerializer.h",
+			"Mu",
+			"YL4LF2FQ7G/moc_IniSerializer.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/include",
+	"INCLUDE_DIR_Debug" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/include_Debug",
+	"INCLUDE_DIR_MinSizeRel" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/include_MinSizeRel",
+	"INCLUDE_DIR_RelWithDebInfo" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/include_RelWithDebInfo",
+	"INCLUDE_DIR_Release" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/include_Release",
+	"MOC_COMPILATION_FILE" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/mocs_compilation.cpp",
+	"MOC_COMPILATION_FILE_Debug" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/mocs_compilation_Debug.cpp",
+	"MOC_COMPILATION_FILE_MinSizeRel" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/mocs_compilation_MinSizeRel.cpp",
+	"MOC_COMPILATION_FILE_RelWithDebInfo" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/mocs_compilation_RelWithDebInfo.cpp",
+	"MOC_COMPILATION_FILE_Release" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/ini_editor_tests_autogen/mocs_compilation_Release.cpp",
+	"MOC_DEFINITIONS" : [],
+	"MOC_DEFINITIONS_Debug" : 
+	[
+		"QT_CORE_LIB",
+		"QT_TESTCASE_BUILDDIR=\"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests\"",
+		"QT_TESTCASE_SOURCEDIR=\"C:/Users/Hunter/Documents/GitHub/INIX/tests\"",
+		"QT_TESTLIB_LIB",
+		"TEST_DATA_DIR=\"C:/Users/Hunter/Documents/GitHub/INIX/tests/data\"",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEFINITIONS_MinSizeRel" : 
+	[
+		"QT_CORE_LIB",
+		"QT_NO_DEBUG",
+		"QT_TESTCASE_BUILDDIR=\"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests\"",
+		"QT_TESTCASE_SOURCEDIR=\"C:/Users/Hunter/Documents/GitHub/INIX/tests\"",
+		"QT_TESTLIB_LIB",
+		"TEST_DATA_DIR=\"C:/Users/Hunter/Documents/GitHub/INIX/tests/data\"",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEFINITIONS_RelWithDebInfo" : 
+	[
+		"QT_CORE_LIB",
+		"QT_NO_DEBUG",
+		"QT_TESTCASE_BUILDDIR=\"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests\"",
+		"QT_TESTCASE_SOURCEDIR=\"C:/Users/Hunter/Documents/GitHub/INIX/tests\"",
+		"QT_TESTLIB_LIB",
+		"TEST_DATA_DIR=\"C:/Users/Hunter/Documents/GitHub/INIX/tests/data\"",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEFINITIONS_Release" : 
+	[
+		"QT_CORE_LIB",
+		"QT_NO_DEBUG",
+		"QT_TESTCASE_BUILDDIR=\"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests\"",
+		"QT_TESTCASE_SOURCEDIR=\"C:/Users/Hunter/Documents/GitHub/INIX/tests\"",
+		"QT_TESTLIB_LIB",
+		"TEST_DATA_DIR=\"C:/Users/Hunter/Documents/GitHub/INIX/tests/data\"",
+		"UNICODE",
+		"WIN32",
+		"WIN64",
+		"_ENABLE_EXTENDED_ALIGNED_STORAGE",
+		"_UNICODE",
+		"_WIN64"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : [],
+	"MOC_INCLUDES_Debug" : 
+	[
+		"C:/Users/Hunter/Documents/GitHub/INIX/src",
+		"C:/Qt/6.10.2/msvc2022_64/include/QtCore",
+		"C:/Qt/6.10.2/msvc2022_64/include",
+		"C:/Qt/6.10.2/msvc2022_64/mkspecs/win32-msvc",
+		"C:/Qt/6.10.2/msvc2022_64/include/QtTest"
+	],
+	"MOC_INCLUDES_MinSizeRel" : 
+	[
+		"C:/Users/Hunter/Documents/GitHub/INIX/src",
+		"C:/Qt/6.10.2/msvc2022_64/include/QtCore",
+		"C:/Qt/6.10.2/msvc2022_64/include",
+		"C:/Qt/6.10.2/msvc2022_64/mkspecs/win32-msvc",
+		"C:/Qt/6.10.2/msvc2022_64/include/QtTest"
+	],
+	"MOC_INCLUDES_RelWithDebInfo" : 
+	[
+		"C:/Users/Hunter/Documents/GitHub/INIX/src",
+		"C:/Qt/6.10.2/msvc2022_64/include/QtCore",
+		"C:/Qt/6.10.2/msvc2022_64/include",
+		"C:/Qt/6.10.2/msvc2022_64/mkspecs/win32-msvc",
+		"C:/Qt/6.10.2/msvc2022_64/include/QtTest"
+	],
+	"MOC_INCLUDES_Release" : 
+	[
+		"C:/Users/Hunter/Documents/GitHub/INIX/src",
+		"C:/Qt/6.10.2/msvc2022_64/include/QtCore",
+		"C:/Qt/6.10.2/msvc2022_64/include",
+		"C:/Qt/6.10.2/msvc2022_64/mkspecs/win32-msvc",
+		"C:/Qt/6.10.2/msvc2022_64/include/QtTest"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : [],
+	"MOC_PREDEFS_FILE" : "",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : true,
+	"PARALLEL" : 6,
+	"PARSE_CACHE_FILE" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE_Debug" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/ParseCache_Debug.txt",
+	"PARSE_CACHE_FILE_MinSizeRel" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/ParseCache_MinSizeRel.txt",
+	"PARSE_CACHE_FILE_RelWithDebInfo" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/ParseCache_RelWithDebInfo.txt",
+	"PARSE_CACHE_FILE_Release" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/ParseCache_Release.txt",
+	"QT_MOC_EXECUTABLE" : "",
+	"QT_MOC_EXECUTABLE_Debug" : "C:/Qt/6.10.2/msvc2022_64/bin/moc.exe",
+	"QT_MOC_EXECUTABLE_MinSizeRel" : "C:/Qt/6.10.2/msvc2022_64/bin/moc.exe",
+	"QT_MOC_EXECUTABLE_RelWithDebInfo" : "C:/Qt/6.10.2/msvc2022_64/bin/moc.exe",
+	"QT_MOC_EXECUTABLE_Release" : "C:/Qt/6.10.2/msvc2022_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 10,
+	"SETTINGS_FILE" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE_Debug" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/AutogenUsed_Debug.txt",
+	"SETTINGS_FILE_MinSizeRel" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/AutogenUsed_MinSizeRel.txt",
+	"SETTINGS_FILE_RelWithDebInfo" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/AutogenUsed_RelWithDebInfo.txt",
+	"SETTINGS_FILE_Release" : "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests_autogen.dir/AutogenUsed_Release.txt",
+	"SOURCES" : 
+	[
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/domain/IniDocument.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniDiffService.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniMergeService.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniParser.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniSearchService.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/src/services/IniSerializer.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Users/Hunter/Documents/GitHub/INIX/tests/IniCoreTests.cpp",
+			"Mu",
+			null
+		]
+	],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

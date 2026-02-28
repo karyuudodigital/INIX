@@ -1,0 +1,12 @@
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/INIX_lupdate.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/INIX_lrelease.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/release_translations.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/INIX_other_files.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/update_translations.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/RUN_TESTS.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/ALL_BUILD.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/src/CMakeFiles/INIX.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/src/CMakeFiles/RUN_TESTS.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/ini_editor_tests.dir
+C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/CMakeFiles/RUN_TESTS.dir

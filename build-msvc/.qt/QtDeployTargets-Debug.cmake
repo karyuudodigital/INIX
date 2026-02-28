@@ -1,0 +1,6 @@
+set(__QT_DEPLOY_TARGET_INIX_FILE C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/src/Debug/INIX.exe)
+set(__QT_DEPLOY_TARGET_INIX_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_INIX_RUNTIME_DLLS C:/Qt/6.10.2/msvc2022_64/bin/Qt6Widgetsd.dll;C:/Qt/6.10.2/msvc2022_64/bin/Qt6Concurrentd.dll;C:/Qt/6.10.2/msvc2022_64/bin/Qt6Guid.dll;C:/Qt/6.10.2/msvc2022_64/bin/Qt6Cored.dll)
+set(__QT_DEPLOY_TARGET_ini_editor_tests_FILE C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/tests/Debug/ini_editor_tests.exe)
+set(__QT_DEPLOY_TARGET_ini_editor_tests_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_ini_editor_tests_RUNTIME_DLLS C:/Qt/6.10.2/msvc2022_64/bin/Qt6Testd.dll;C:/Qt/6.10.2/msvc2022_64/bin/Qt6Cored.dll)

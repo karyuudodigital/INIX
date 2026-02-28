@@ -1,0 +1,8 @@
+C:\Users\Hunter\Documents\GitHub\INIX\tests\IniCoreTests.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\tests\ini_editor_tests.dir\Release\IniCoreTests.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\domain\IniDocument.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\tests\ini_editor_tests.dir\Release\IniDocument.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniParser.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\tests\ini_editor_tests.dir\Release\IniParser.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniSerializer.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\tests\ini_editor_tests.dir\Release\IniSerializer.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniDiffService.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\tests\ini_editor_tests.dir\Release\IniDiffService.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniMergeService.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\tests\ini_editor_tests.dir\Release\IniMergeService.obj
+C:\Users\Hunter\Documents\GitHub\INIX\src\services\IniSearchService.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\tests\ini_editor_tests.dir\Release\IniSearchService.obj
+C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\tests\ini_editor_tests_autogen\mocs_compilation_Release.cpp;C:\Users\Hunter\Documents\GitHub\INIX\build-msvc\tests\ini_editor_tests.dir\Release\mocs_compilation_Release.obj

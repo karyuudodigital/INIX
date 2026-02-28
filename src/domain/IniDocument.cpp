@@ -125,7 +125,7 @@ bool IniDocument::addSection(const QString& section) {
         .section = QString(),
         .key = QString(),
         .value = QString(),
-        .sourceLine = lines_.size() + 1,
+        .sourceLine = static_cast<int>(lines_.size()) + 1,
     });
     lines_.push_back(IniLine{
         .type = IniLineType::Section,
@@ -133,7 +133,7 @@ bool IniDocument::addSection(const QString& section) {
         .section = normalized,
         .key = QString(),
         .value = QString(),
-        .sourceLine = lines_.size() + 1,
+        .sourceLine = static_cast<int>(lines_.size()) + 1,
     });
 
     dirty_ = true;
