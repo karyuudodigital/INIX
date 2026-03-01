@@ -1,8 +1,11 @@
-# INIX
+<img width="1920" height="680" alt="hero-horoizontal" src="https://github.com/user-attachments/assets/eaf2ec35-e81d-4c74-8068-76b6031e8dff" />
 
+
+# INIX
 INIX is a desktop app for editing `.ini` files easier.
 
 It is built for large, messy config files where you need to search fast, compare changes clearly, and merge settings without losing context. I intended it to be used for game configs (SkyrimPrefs.ini, Morrowind.ini, etc)
+
 
 ## Features
 
@@ -51,4 +54,8 @@ ctest --test-dir build --output-on-failure
 App binary:
 - Windows: `build/src/Release/ini_editor.exe` (or `build/src/ini_editor.exe`)
 - macOS/Linux: `build/src/ini_editor`
+
+
+<img width="1277" height="723" alt="screenshot 2-eng" src="https://github.com/user-attachments/assets/25bf554a-bbec-4107-a6bd-22406a9ed9f7" />
+<img width="1278" height="723" alt="screenshot 1-eng" src="https://github.com/user-attachments/assets/37d0d1c6-2292-41fe-b642-247fe90e9e3d" />
 
