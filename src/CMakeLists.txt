@@ -44,6 +44,8 @@ add_executable(INIX WIN32
     ${APP_HEADERS}
 )
 
+add_definitions(-DQT_ENABLE_HIGHDPI_SCALING)
+
 target_include_directories(INIX PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(INIX PRIVATE Qt6::Core Qt6::Widgets Qt6::Concurrent)
 
@@ -59,4 +61,23 @@ qt_add_translations(INIX
 add_custom_command(TARGET INIX POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:INIX>/translations"
     COMMAND ${CMAKE_COMMAND} -E copy_if_different ${APP_QM_FILES} "$<TARGET_FILE_DIR:INIX>/translations"
+)
+
+set(APP_MANIFEST ${CMAKE_CURRENT_SOURCE_DIR}/app.manifest)
+
+target_sources(INIX PRIVATE ${APP_MANIFEST})
+
+set_target_properties(INIX PROPERTIES
+    WIN32_EXECUTABLE TRUE
+)
+
+
+target_link_options(INIX PRIVATE
+    "/MANIFEST:EMBED"
+    "/MANIFESTINPUT:${APP_MANIFEST}"
+)
+
+target_sources(INIX PRIVATE
+    assets/app.rc
+    app.manifest
 )

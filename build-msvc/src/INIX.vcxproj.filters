@@ -113,6 +113,9 @@
     <ResourceCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\assets\app_icon.rc">
       <Filter>Source Files</Filter>
     </ResourceCompile>
+    <ResourceCompile Include="C:\Users\Hunter\Documents\GitHub\INIX\src\assets\app.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">

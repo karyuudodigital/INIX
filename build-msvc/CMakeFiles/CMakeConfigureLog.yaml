@@ -37,7 +37,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -68,7 +69,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
   -
     kind: "message-v1"
     backtrace:
@@ -85,7 +85,7 @@ events:
       The output was:
       0
       MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
-      Build started 2026/02/28 22:08:15.
+      Build started 3/2/2026 5:55:38 AM.
       
       Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\4.3.0-rc1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -114,7 +114,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.70
+      Time Elapsed 00:00:00.61
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -147,7 +147,8 @@ events:
       - "link"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -176,7 +177,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.com"
     found: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.exe"
@@ -184,7 +184,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -215,7 +216,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
   -
     kind: "find-v1"
     backtrace:
@@ -239,7 +239,8 @@ events:
       - "lld-link"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -268,14 +269,16 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lld-link"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/lld-link.com"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/lld-link.exe"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/lld-link"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/lld-link.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/lld-link.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/lld-link"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/lld-link.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/lld-link.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/lld-link"
       - "C:/Windows/System32/lld-link.com"
       - "C:/Windows/System32/lld-link.exe"
       - "C:/Windows/System32/lld-link"
@@ -360,15 +363,13 @@ events:
       - "C:/Users/Hunter/.dotnet/tools/lld-link.com"
       - "C:/Users/Hunter/.dotnet/tools/lld-link.exe"
       - "C:/Users/Hunter/.dotnet/tools/lld-link"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/lld-link.com"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/lld-link.exe"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/lld-link"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -399,7 +400,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
   -
     kind: "find-v1"
     backtrace:
@@ -421,7 +421,8 @@ events:
       - "link"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -450,7 +451,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.com"
     found: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/link.exe"
@@ -458,7 +458,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -489,7 +490,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
   -
     kind: "find-v1"
     backtrace:
@@ -511,7 +511,8 @@ events:
       - "mt"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -540,14 +541,16 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/mt.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/mt.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/mt"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/mt.com"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/mt.exe"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/mt"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mt.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mt.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/mt"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mt.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mt.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/mt"
       - "C:/Windows/System32/mt.com"
       - "C:/Windows/System32/mt.exe"
       - "C:/Windows/System32/mt"
@@ -632,15 +635,13 @@ events:
       - "C:/Users/Hunter/.dotnet/tools/mt.com"
       - "C:/Users/Hunter/.dotnet/tools/mt.exe"
       - "C:/Users/Hunter/.dotnet/tools/mt"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/mt.com"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/mt.exe"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/mt"
     found: false
     search_context:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -671,7 +672,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
   -
     kind: "find-v1"
     backtrace:
@@ -693,7 +693,8 @@ events:
       - "lib"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -722,7 +723,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lib.com"
     found: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/lib.exe"
@@ -730,7 +730,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -761,7 +762,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
   -
     kind: "find-v1"
     backtrace:
@@ -788,7 +788,8 @@ events:
       - "C:/Qt/6.10.2/msvc2022_64/bin/"
       - "C:/Qt/6.10.2/msvc2022_64/sbin/"
       - "C:/Qt/6.10.2/msvc2022_64/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -817,7 +818,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -840,9 +840,12 @@ events:
       - "C:/Qt/6.10.2/msvc2022_64/rc.com"
       - "C:/Qt/6.10.2/msvc2022_64/rc.exe"
       - "C:/Qt/6.10.2/msvc2022_64/rc"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/rc.com"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/rc.exe"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/rc"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/rc.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/rc.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/rc"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/rc.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/rc.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/rc"
       - "C:/Windows/System32/rc.com"
       - "C:/Windows/System32/rc.exe"
       - "C:/Windows/System32/rc"
@@ -927,9 +930,6 @@ events:
       - "C:/Users/Hunter/.dotnet/tools/rc.com"
       - "C:/Users/Hunter/.dotnet/tools/rc.exe"
       - "C:/Users/Hunter/.dotnet/tools/rc"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/rc.com"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/rc.exe"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/rc"
       - "C:/Program Files/bin/rc.com"
       - "C:/Program Files/bin/rc.exe"
       - "C:/Program Files/bin/rc"
@@ -971,7 +971,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1002,7 +1003,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -1018,8 +1018,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-syc7n7"
-      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-syc7n7"
+      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-1ymyem"
+      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-1ymyem"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1030,39 +1030,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-syc7n7'
+        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-1ymyem'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3ff45.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_7cf95.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
-        Build started 2026/02/28 22:08:16.
+        Build started 3/2/2026 5:55:39 AM.
         
-        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-syc7n7\\cmTC_3ff45.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-1ymyem\\cmTC_7cf95.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-syc7n7\\Debug\\".
-          Creating directory "cmTC_3ff45.dir\\Debug\\cmTC_3ff45.tlog\\".
+          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-1ymyem\\Debug\\".
+          Creating directory "cmTC_7cf95.dir\\Debug\\cmTC_7cf95.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_3ff45.dir\\Debug\\cmTC_3ff45.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_3ff45.dir\\Debug\\cmTC_3ff45.tlog\\unsuccessfulbuild".
+          Creating "cmTC_7cf95.dir\\Debug\\cmTC_7cf95.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_7cf95.dir\\Debug\\cmTC_7cf95.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_3ff45.dir\\Debug\\\\" /Fd"cmTC_3ff45.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_7cf95.dir\\Debug\\\\" /Fd"cmTC_7cf95.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35725 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_3ff45.dir\\Debug\\\\" /Fd"cmTC_3ff45.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_7cf95.dir\\Debug\\\\" /Fd"cmTC_7cf95.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-syc7n7\\Debug\\cmTC_3ff45.exe" /INCREMENTAL /ILK:"cmTC_3ff45.dir\\Debug\\cmTC_3ff45.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-syc7n7/Debug/cmTC_3ff45.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-syc7n7/Debug/cmTC_3ff45.lib" /MACHINE:X64  /machine:x64 cmTC_3ff45.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_3ff45.vcxproj -> C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-syc7n7\\Debug\\cmTC_3ff45.exe
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-1ymyem\\Debug\\cmTC_7cf95.exe" /INCREMENTAL /ILK:"cmTC_7cf95.dir\\Debug\\cmTC_7cf95.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-1ymyem/Debug/cmTC_7cf95.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-1ymyem/Debug/cmTC_7cf95.lib" /MACHINE:X64  /machine:x64 cmTC_7cf95.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_7cf95.vcxproj -> C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-1ymyem\\Debug\\cmTC_7cf95.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_3ff45.dir\\Debug\\cmTC_3ff45.tlog\\unsuccessfulbuild".
-          Touching "cmTC_3ff45.dir\\Debug\\cmTC_3ff45.tlog\\cmTC_3ff45.lastbuildstate".
-        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-syc7n7\\cmTC_3ff45.vcxproj" (default targets).
+          Deleting file "cmTC_7cf95.dir\\Debug\\cmTC_7cf95.tlog\\unsuccessfulbuild".
+          Touching "cmTC_7cf95.dir\\Debug\\cmTC_7cf95.tlog\\cmTC_7cf95.lastbuildstate".
+        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-1ymyem\\cmTC_7cf95.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.49
+        Time Elapsed 00:00:00.55
         
       exitCode: 0
   -
@@ -1109,8 +1109,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-n6utx4"
-      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-n6utx4"
+      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-uvdaf9"
+      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-uvdaf9"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1121,42 +1121,42 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-n6utx4'
+        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-uvdaf9'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_5220b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b016c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
-        Build started 2026/02/28 22:08:17.
+        Build started 3/2/2026 5:55:40 AM.
         
-        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\cmTC_5220b.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\cmTC_b016c.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\Debug\\".
-          Creating directory "cmTC_5220b.dir\\Debug\\cmTC_5220b.tlog\\".
+          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\Debug\\".
+          Creating directory "cmTC_b016c.dir\\Debug\\cmTC_b016c.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_5220b.dir\\Debug\\cmTC_5220b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_5220b.dir\\Debug\\cmTC_5220b.tlog\\unsuccessfulbuild".
+          Creating "cmTC_b016c.dir\\Debug\\cmTC_b016c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_b016c.dir\\Debug\\cmTC_b016c.tlog\\unsuccessfulbuild".
         ComputeStdModulesCompileInputs:
           Reading library manifest file 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\modules.json' which provides data for library 'microsoft/STL'.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.ixx' from library 'microsoft/STL' to be built with this project.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.compat.ixx' from library 'microsoft/STL' to be built with this project.
         MakeDirsForCl:
-          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\cmTC_5220b.dir\\Debug\\microsoft\\STL".
+          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\cmTC_b016c.dir\\Debug\\microsoft\\STL".
         SetModuleDependencies:
-          Creating directory "cmTC_5220b.dir\\Debug\\cmTC_5220b_MD.tlog\\".
+          Creating directory "cmTC_b016c.dir\\Debug\\cmTC_b016c_MD.tlog\\".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_5220b.dir\\Debug\\\\" /Fd"cmTC_5220b.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\src.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_b016c.dir\\Debug\\\\" /Fd"cmTC_b016c.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\src.cxx"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35725 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_5220b.dir\\Debug\\\\" /Fd"cmTC_5220b.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\src.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_b016c.dir\\Debug\\\\" /Fd"cmTC_b016c.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\src.cxx"
           src.cxx
-        C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\cmTC_5220b.vcxproj]
-        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\cmTC_5220b.vcxproj" (default targets) -- FAILED.
+        C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\cmTC_b016c.vcxproj]
+        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\cmTC_b016c.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\cmTC_5220b.vcxproj" (default target) (1) ->
+        "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\cmTC_b016c.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
-          C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-n6utx4\\cmTC_5220b.vcxproj]
+          C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-uvdaf9\\cmTC_b016c.vcxproj]
         
             0 Warning(s)
             1 Error(s)
@@ -1179,8 +1179,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-gx49kl"
-      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-gx49kl"
+      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-igoodn"
+      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-igoodn"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1191,49 +1191,49 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-gx49kl'
+        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-igoodn'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2e05e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0f247.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
-        Build started 2026/02/28 22:08:18.
+        Build started 3/2/2026 5:55:40 AM.
         
-        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\cmTC_2e05e.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\cmTC_0f247.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\Debug\\".
-          Creating directory "cmTC_2e05e.dir\\Debug\\cmTC_2e05e.tlog\\".
+          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\Debug\\".
+          Creating directory "cmTC_0f247.dir\\Debug\\cmTC_0f247.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_2e05e.dir\\Debug\\cmTC_2e05e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_2e05e.dir\\Debug\\cmTC_2e05e.tlog\\unsuccessfulbuild".
+          Creating "cmTC_0f247.dir\\Debug\\cmTC_0f247.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_0f247.dir\\Debug\\cmTC_0f247.tlog\\unsuccessfulbuild".
         ComputeStdModulesCompileInputs:
           Reading library manifest file 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\modules.json' which provides data for library 'microsoft/STL'.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.ixx' from library 'microsoft/STL' to be built with this project.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.compat.ixx' from library 'microsoft/STL' to be built with this project.
         MakeDirsForCl:
-          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\cmTC_2e05e.dir\\Debug\\microsoft\\STL".
+          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\cmTC_0f247.dir\\Debug\\microsoft\\STL".
         SetModuleDependencies:
-          Creating directory "cmTC_2e05e.dir\\Debug\\cmTC_2e05e_MD.tlog\\".
+          Creating directory "cmTC_0f247.dir\\Debug\\cmTC_0f247_MD.tlog\\".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_2e05e.dir\\Debug\\\\" /Fd"cmTC_2e05e.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\CheckFunctionExists.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_0f247.dir\\Debug\\\\" /Fd"cmTC_0f247.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\CheckFunctionExists.cxx"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35725 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_2e05e.dir\\Debug\\\\" /Fd"cmTC_2e05e.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\CheckFunctionExists.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_0f247.dir\\Debug\\\\" /Fd"cmTC_0f247.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\CheckFunctionExists.cxx"
           CheckFunctionExists.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\Debug\\cmTC_2e05e.exe" /INCREMENTAL /ILK:"cmTC_2e05e.dir\\Debug\\cmTC_2e05e.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-gx49kl/Debug/cmTC_2e05e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-gx49kl/Debug/cmTC_2e05e.lib" /MACHINE:X64  /machine:x64 cmTC_2e05e.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\cmTC_2e05e.vcxproj]
-        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\cmTC_2e05e.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\Debug\\cmTC_0f247.exe" /INCREMENTAL /ILK:"cmTC_0f247.dir\\Debug\\cmTC_0f247.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-igoodn/Debug/cmTC_0f247.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-igoodn/Debug/cmTC_0f247.lib" /MACHINE:X64  /machine:x64 cmTC_0f247.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\cmTC_0f247.vcxproj]
+        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\cmTC_0f247.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\cmTC_2e05e.vcxproj" (default target) (1) ->
+        "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\cmTC_0f247.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-gx49kl\\cmTC_2e05e.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-igoodn\\cmTC_0f247.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.40
+        Time Elapsed 00:00:00.48
         
       exitCode: 1
   -
@@ -1251,8 +1251,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-b32c0c"
-      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-b32c0c"
+      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-6hxtsw"
+      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-6hxtsw"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1263,49 +1263,49 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-b32c0c'
+        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-6hxtsw'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_58b1b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_315ef.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
-        Build started 2026/02/28 22:08:18.
+        Build started 3/2/2026 5:55:41 AM.
         
-        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\cmTC_58b1b.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\cmTC_315ef.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\Debug\\".
-          Creating directory "cmTC_58b1b.dir\\Debug\\cmTC_58b1b.tlog\\".
+          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\Debug\\".
+          Creating directory "cmTC_315ef.dir\\Debug\\cmTC_315ef.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_58b1b.dir\\Debug\\cmTC_58b1b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_58b1b.dir\\Debug\\cmTC_58b1b.tlog\\unsuccessfulbuild".
+          Creating "cmTC_315ef.dir\\Debug\\cmTC_315ef.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_315ef.dir\\Debug\\cmTC_315ef.tlog\\unsuccessfulbuild".
         ComputeStdModulesCompileInputs:
           Reading library manifest file 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\modules.json' which provides data for library 'microsoft/STL'.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.ixx' from library 'microsoft/STL' to be built with this project.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.compat.ixx' from library 'microsoft/STL' to be built with this project.
         MakeDirsForCl:
-          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\cmTC_58b1b.dir\\Debug\\microsoft\\STL".
+          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\cmTC_315ef.dir\\Debug\\microsoft\\STL".
         SetModuleDependencies:
-          Creating directory "cmTC_58b1b.dir\\Debug\\cmTC_58b1b_MD.tlog\\".
+          Creating directory "cmTC_315ef.dir\\Debug\\cmTC_315ef_MD.tlog\\".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_58b1b.dir\\Debug\\\\" /Fd"cmTC_58b1b.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\CheckFunctionExists.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_315ef.dir\\Debug\\\\" /Fd"cmTC_315ef.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\CheckFunctionExists.cxx"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35725 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_58b1b.dir\\Debug\\\\" /Fd"cmTC_58b1b.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\CheckFunctionExists.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_315ef.dir\\Debug\\\\" /Fd"cmTC_315ef.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\CheckFunctionExists.cxx"
           CheckFunctionExists.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\Debug\\cmTC_58b1b.exe" /INCREMENTAL /ILK:"cmTC_58b1b.dir\\Debug\\cmTC_58b1b.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-b32c0c/Debug/cmTC_58b1b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-b32c0c/Debug/cmTC_58b1b.lib" /MACHINE:X64  /machine:x64 cmTC_58b1b.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\cmTC_58b1b.vcxproj]
-        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\cmTC_58b1b.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\Debug\\cmTC_315ef.exe" /INCREMENTAL /ILK:"cmTC_315ef.dir\\Debug\\cmTC_315ef.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-6hxtsw/Debug/cmTC_315ef.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-6hxtsw/Debug/cmTC_315ef.lib" /MACHINE:X64  /machine:x64 cmTC_315ef.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\cmTC_315ef.vcxproj]
+        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\cmTC_315ef.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\cmTC_58b1b.vcxproj" (default target) (1) ->
+        "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\cmTC_315ef.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-b32c0c\\cmTC_58b1b.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-6hxtsw\\cmTC_315ef.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.40
+        Time Elapsed 00:00:00.44
         
       exitCode: 1
   -
@@ -1324,8 +1324,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-mlyyxj"
-      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-mlyyxj"
+      source: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-ba5l2b"
+      binary: "C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-ba5l2b"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1336,47 +1336,47 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-mlyyxj'
+        Change Dir: 'C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-ba5l2b'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c0866.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_bb159.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.3.0-release-26070-10+3972042b7 for .NET Framework
-        Build started 2026/02/28 22:08:19.
+        Build started 3/2/2026 5:55:42 AM.
         
-        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-mlyyxj\\cmTC_c0866.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-ba5l2b\\cmTC_bb159.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-mlyyxj\\Debug\\".
-          Creating directory "cmTC_c0866.dir\\Debug\\cmTC_c0866.tlog\\".
+          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-ba5l2b\\Debug\\".
+          Creating directory "cmTC_bb159.dir\\Debug\\cmTC_bb159.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_c0866.dir\\Debug\\cmTC_c0866.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_c0866.dir\\Debug\\cmTC_c0866.tlog\\unsuccessfulbuild".
+          Creating "cmTC_bb159.dir\\Debug\\cmTC_bb159.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_bb159.dir\\Debug\\cmTC_bb159.tlog\\unsuccessfulbuild".
         ComputeStdModulesCompileInputs:
           Reading library manifest file 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\modules.json' which provides data for library 'microsoft/STL'.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.ixx' from library 'microsoft/STL' to be built with this project.
           Adding module source 'C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\modules\\std.compat.ixx' from library 'microsoft/STL' to be built with this project.
         MakeDirsForCl:
-          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-mlyyxj\\cmTC_c0866.dir\\Debug\\microsoft\\STL".
+          Creating directory "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-ba5l2b\\cmTC_bb159.dir\\Debug\\microsoft\\STL".
         SetModuleDependencies:
-          Creating directory "cmTC_c0866.dir\\Debug\\cmTC_c0866_MD.tlog\\".
+          Creating directory "cmTC_bb159.dir\\Debug\\cmTC_bb159_MD.tlog\\".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_c0866.dir\\Debug\\\\" /Fd"cmTC_c0866.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-mlyyxj\\src.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_bb159.dir\\Debug\\\\" /Fd"cmTC_bb159.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-ba5l2b\\src.cxx"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.50.35725 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_c0866.dir\\Debug\\\\" /Fd"cmTC_c0866.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-mlyyxj\\src.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /std:c++20 /Fo"cmTC_bb159.dir\\Debug\\\\" /Fd"cmTC_bb159.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-ba5l2b\\src.cxx"
           src.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-mlyyxj\\Debug\\cmTC_c0866.exe" /INCREMENTAL /ILK:"cmTC_c0866.dir\\Debug\\cmTC_c0866.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-mlyyxj/Debug/cmTC_c0866.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-mlyyxj/Debug/cmTC_c0866.lib" /MACHINE:X64  /machine:x64 cmTC_c0866.dir\\Debug\\src.obj
-          cmTC_c0866.vcxproj -> C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-mlyyxj\\Debug\\cmTC_c0866.exe
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.50.35717\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-ba5l2b\\Debug\\cmTC_bb159.exe" /INCREMENTAL /ILK:"cmTC_bb159.dir\\Debug\\cmTC_bb159.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-ba5l2b/Debug/cmTC_bb159.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Hunter/Documents/GitHub/INIX/build-msvc/CMakeFiles/CMakeScratch/TryCompile-ba5l2b/Debug/cmTC_bb159.lib" /MACHINE:X64  /machine:x64 cmTC_bb159.dir\\Debug\\src.obj
+          cmTC_bb159.vcxproj -> C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-ba5l2b\\Debug\\cmTC_bb159.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_c0866.dir\\Debug\\cmTC_c0866.tlog\\unsuccessfulbuild".
-          Touching "cmTC_c0866.dir\\Debug\\cmTC_c0866.tlog\\cmTC_c0866.lastbuildstate".
-        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-mlyyxj\\cmTC_c0866.vcxproj" (default targets).
+          Deleting file "cmTC_bb159.dir\\Debug\\cmTC_bb159.tlog\\unsuccessfulbuild".
+          Touching "cmTC_bb159.dir\\Debug\\cmTC_bb159.tlog\\cmTC_bb159.lastbuildstate".
+        Done Building Project "C:\\Users\\Hunter\\Documents\\GitHub\\INIX\\build-msvc\\CMakeFiles\\CMakeScratch\\TryCompile-ba5l2b\\cmTC_bb159.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.67
+        Time Elapsed 00:00:00.72
         
       exitCode: 0
   -
@@ -1485,7 +1485,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1516,7 +1517,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -1615,7 +1615,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1646,7 +1647,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -1679,7 +1679,8 @@ events:
       - "C:/Qt/6.10.2/msvc2022_64/sbin/"
       - "C:/Qt/6.10.2/msvc2022_64/"
       - "C:/Qt/6.10.2/msvc2022_64/bin/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -1708,7 +1709,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -1728,7 +1728,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1759,7 +1760,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -1866,7 +1866,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -1897,7 +1898,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2013,7 +2013,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -2044,7 +2045,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2157,7 +2157,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -2188,7 +2189,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2227,7 +2227,8 @@ events:
       - "C:/Qt/6.10.2/msvc2022_64/include/"
       - "C:/Qt/6.10.2/msvc2022_64/"
       - "/include/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -2256,7 +2257,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
       - "C:/Program Files/include/"
       - "C:/Program Files/"
       - "C:/Program Files (x86)/include/"
@@ -2269,7 +2269,8 @@ events:
       - "C:/Qt/6.10.2/msvc2022_64/include/vulkan/vulkan.h"
       - "C:/Qt/6.10.2/msvc2022_64/vulkan/vulkan.h"
       - "/include/vulkan/vulkan.h"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/vulkan/vulkan.h"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/vulkan/vulkan.h"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/vulkan/vulkan.h"
       - "C:/Windows/System32/vulkan/vulkan.h"
       - "C:/Windows/vulkan/vulkan.h"
       - "C:/Windows/System32/wbem/vulkan/vulkan.h"
@@ -2298,7 +2299,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/vulkan/vulkan.h"
       - "C:/Users/Hunter/AppData/Local/Python/bin/vulkan/vulkan.h"
       - "C:/Users/Hunter/.dotnet/tools/vulkan/vulkan.h"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/vulkan/vulkan.h"
       - "C:/Program Files/include/vulkan/vulkan.h"
       - "C:/Program Files/vulkan/vulkan.h"
       - "C:/Program Files (x86)/include/vulkan/vulkan.h"
@@ -2312,7 +2312,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -2343,7 +2344,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2383,7 +2383,8 @@ events:
       - "C:/Qt/6.10.2/msvc2022_64/"
       - "/lib/"
       - "/bin/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -2412,7 +2413,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
       - "C:/Program Files/lib/"
       - "C:/Program Files/"
       - "C:/Program Files (x86)/lib/"
@@ -2427,7 +2427,8 @@ events:
       - "C:/Qt/6.10.2/msvc2022_64/"
       - "/lib/"
       - "/bin/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -2456,7 +2457,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
       - "C:/Program Files/lib/"
       - "C:/Program Files/"
       - "C:/Program Files (x86)/lib/"
@@ -2471,7 +2471,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -2502,7 +2503,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2546,7 +2546,8 @@ events:
       - "C:/Qt/6.10.2/msvc2022_64/sbin/"
       - "C:/Qt/6.10.2/msvc2022_64/"
       - "/bin/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -2575,7 +2576,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -2601,9 +2601,12 @@ events:
       - "/bin/glslc.com"
       - "/bin/glslc.exe"
       - "/bin/glslc"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/glslc.com"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/glslc.exe"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/glslc"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/glslc.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/glslc.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/glslc"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/glslc.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/glslc.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/glslc"
       - "C:/Windows/System32/glslc.com"
       - "C:/Windows/System32/glslc.exe"
       - "C:/Windows/System32/glslc"
@@ -2688,9 +2691,6 @@ events:
       - "C:/Users/Hunter/.dotnet/tools/glslc.com"
       - "C:/Users/Hunter/.dotnet/tools/glslc.exe"
       - "C:/Users/Hunter/.dotnet/tools/glslc"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/glslc.com"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/glslc.exe"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/glslc"
       - "C:/Program Files/bin/glslc.com"
       - "C:/Program Files/bin/glslc.exe"
       - "C:/Program Files/bin/glslc"
@@ -2732,7 +2732,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -2763,7 +2764,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -2803,7 +2803,8 @@ events:
       - "C:/Qt/6.10.2/msvc2022_64/sbin/"
       - "C:/Qt/6.10.2/msvc2022_64/"
       - "/bin/"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -2832,7 +2833,6 @@ events:
       - "C:/Users/Hunter/AppData/Local/Programs/cursor/resources/app/bin/"
       - "C:/Users/Hunter/AppData/Local/Python/bin/"
       - "C:/Users/Hunter/.dotnet/tools/"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -2858,9 +2858,12 @@ events:
       - "/bin/glslangValidator.com"
       - "/bin/glslangValidator.exe"
       - "/bin/glslangValidator"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/glslangValidator.com"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/glslangValidator.exe"
-      - "C:/Users/Hunter/.codex/tmp/arg0/codex-arg0xaEhmn/glslangValidator"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/glslangValidator.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/glslangValidator.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/debugCommand/glslangValidator"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/glslangValidator.com"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/glslangValidator.exe"
+      - "C:/Users/Hunter/AppData/Roaming/Code/User/globalStorage/github.copilot-chat/copilotCli/glslangValidator"
       - "C:/Windows/System32/glslangValidator.com"
       - "C:/Windows/System32/glslangValidator.exe"
       - "C:/Windows/System32/glslangValidator"
@@ -2945,9 +2948,6 @@ events:
       - "C:/Users/Hunter/.dotnet/tools/glslangValidator.com"
       - "C:/Users/Hunter/.dotnet/tools/glslangValidator.exe"
       - "C:/Users/Hunter/.dotnet/tools/glslangValidator"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/glslangValidator.com"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/glslangValidator.exe"
-      - "C:/Users/Hunter/.vscode/extensions/openai.chatgpt-0.4.78-win32-x64/bin/windows-x86_64/glslangValidator"
       - "C:/Program Files/bin/glslangValidator.com"
       - "C:/Program Files/bin/glslangValidator.exe"
       - "C:/Program Files/bin/glslangValidator"
@@ -2989,7 +2989,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -3020,7 +3021,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3135,7 +3135,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -3166,7 +3167,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3273,7 +3273,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -3304,7 +3305,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3395,7 +3395,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -3426,7 +3427,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3533,7 +3533,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -3564,7 +3565,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -3655,7 +3655,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -3686,7 +3687,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -5547,7 +5547,8 @@ events:
       CMAKE_PREFIX_PATH:
         - "C:\\Qt\\6.10.2\\msvc2022_64"
       ENV{PATH}:
-        - "C:\\Users\\Hunter\\.codex\\tmp\\arg0\\codex-arg0xaEhmn"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\debugCommand"
+        - "c:\\Users\\Hunter\\AppData\\Roaming\\Code\\User\\globalStorage\\github.copilot-chat\\copilotCli"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -5578,7 +5579,6 @@ events:
         - "C:\\Users\\Hunter\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
         - "C:\\Users\\Hunter\\AppData\\Local\\Python\\bin"
         - "C:\\Users\\Hunter\\.dotnet\\tools"
-        - "c:\\Users\\Hunter\\.vscode\\extensions\\openai.chatgpt-0.4.78-win32-x64\\bin\\windows-x86_64"
       CMAKE_INSTALL_PREFIX: "C:/Program Files/INIX"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"

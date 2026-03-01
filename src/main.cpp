@@ -10,6 +10,8 @@
       - Hands control to Qt's event loop via app.exec(), where all signals/slots are processed.
 */
 
+#define _WIN32_WINNT 0x0603  // Windows 8.1 (required for SetProcessDpiAwareness)
+
 #include "app/MainWindow.h"
 
 #include <QApplication>
@@ -17,8 +19,19 @@
 #include <QIcon>
 #include <QLocale>
 #include <QTranslator>
+#include <ShellScalingApi.h>
+
+#pragma comment(lib, "Shcore.lib")
+
 
 int main(int argc, char* argv[]) {
+    
+
+    // Enable high DPI scaling on Windows and Linux. On macOS, this is enabled by default and has no effect.
+    SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);
+    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(
+        Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
+    
     // QApplication owns global UI state (theme, fonts, event dispatch, clipboard, etc.).
     QApplication app(argc, argv);
 
