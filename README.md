@@ -59,3 +59,5 @@ App binary:
 <img width="1277" height="723" alt="screenshot 2-eng" src="https://github.com/user-attachments/assets/25bf554a-bbec-4107-a6bd-22406a9ed9f7" />
 <img width="1278" height="723" alt="screenshot 1-eng" src="https://github.com/user-attachments/assets/37d0d1c6-2292-41fe-b642-247fe90e9e3d" />
 
+
+KARYUUDO DIGITAL © 2025-2026
